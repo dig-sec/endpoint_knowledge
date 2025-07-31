@@ -1,0 +1,7 @@
+The MITRE ATT&CK T1129 technique is a Windows process that reads or writes to an open file from memory without checking the access rights. This technique is commonly used in malware attacks as it allows attackers to gain unauthorized access to sensitive data stored on a computer's hard drive, network shares, or removable storage devices.
+
+The T1129 process runs on Windows versions starting from XP SP3 and Server 2003 up to the latest version of Windows 10. It is part of the Windows kernel and is pre-loaded on every Windows machine. The process has a low profile in memory, meaning it can remain undetected by security tools such as anti-virus software or firewalls.
+
+T1129 can be exploited through various methods including file access, network shares, removable storage devices, and system services. Once an attacker gains unauthorized access to a computer's hard drive or network share via T1129, they can use it to gain further access to sensitive data such as usernames, passwords, credit card information, and other personal information stored on the computer.
+
+The MITRE ATT&CK T1129 process is not a new technique, but rather one that has been used by attackers for many years. It is critical that Windows users take steps to secure their machines against such attacks, including keeping up-to-date anti-virus software and firewalls enabled on the system.

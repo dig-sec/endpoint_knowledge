@@ -1,0 +1,1 @@
+Detecting the use of MITRE ATT&CK technique T1129 (PowerShell Script Execution) can be achieved by setting up event logs to capture any errors or warnings generated during PowerShell execution. Additionally, monitoring for abnormal usage patterns such as excessive command line arguments and suspicious file paths can help identify potential malware infection attempts.

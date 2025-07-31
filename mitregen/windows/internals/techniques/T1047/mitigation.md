@@ -1,0 +1,6 @@
+Mitigation Strategies for MITRE ATT&CK Technique T1047 (Windows)
+Technique T1047 is used by attackers to modify the Registry and create new keys or modify existing ones. To mitigate this technique, here are some strategies:
+1. Enable User Account Control (UAC): UAC provides additional security layers for Windows systems and can help prevent malicious programs from being installed without user permission.
+2. Use Group Policy Editor to restrict Registry modifications: Group Policy Editor allows administrators to define policies that control the type of files that users can install, delete or modify on their computers. You can use this feature to limit the ability of users to modify specific keys in the Registry.
+3. Run antivirus software and keep it up-to-date: Antivirus software can detect and remove malicious programs that are trying to modify the Registry. Keeping your antivirus software updated will ensure that you have the latest detection capabilities.
+4. Use a firewall to block network traffic: A firewall is a security system designed to prevent unauthorized access to or from a private network. Blocking network traffic from specific ports and IP addresses can help prevent attacks that are trying to modify the Registry.

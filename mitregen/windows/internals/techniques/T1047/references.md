@@ -1,0 +1,1 @@
+One reference is the MITRE ATT&CK technique page for "PowerShell Empire Module Execution" (T1047): https://attack.mitre.org/wiki/Technique/T1047. This provides detailed information on how PowerShell Empire can be used to execute malicious modules, including the required command syntax and potential mitigation strategies.

@@ -1,0 +1,6 @@
+Detection rule for MITRE ATT&CK technique T1038 on Windows:
+1. Check for changes in the size of files and folders that are not part of normal file management operations (e.g., moving, copying, or deleting). If a file's size increases or decreases significantly without any obvious reason, it could indicate an attempt to modify system files.
+2. Look for unexplained changes in the permissions of files and folders on the system. If the owner, group, or permissions of certain files and folders have been modified without proper authorization, this could be an indication of malware activity.
+3. Monitor network traffic for unusual patterns, such as repeated connections to known command-and-control (C2) servers or unrecognized outbound ports. These may indicate that a system is being compromised and being used as part of a botnet.
+4. Check the event logs on Windows systems for any unusual events, such as excessive volume write activity, unauthorized access attempts, or unexpected shutdowns.
+5. Use intrusion detection systems (IDS) to monitor network traffic and detect suspicious patterns, such as excessive use of port 445 (Windows Server Message Block), which is often used by malware for C2 communication.

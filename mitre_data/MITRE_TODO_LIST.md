@@ -1,0 +1,1659 @@
+# MITRE ATT&CK Knowledge Base TODO List
+
+Generated: 2025-07-31T17:19:09.067953
+
+## Executive Summary
+- **Total MITRE ATT&CK Techniques**: 691
+- **Completed in Knowledge Base**: 34
+- **Remaining TODO**: 657
+- **Coverage**: 4.92%
+
+## Platform Breakdown
+
+### Windows
+- Total: 472
+- Completed: 33
+- Remaining: 439
+- Coverage: 6.99%
+
+#### TODO (439 techniques)
+- 📋 Sub-technique **T1055.011**: Extra Window Memory Injection
+- 📋 Sub-technique **T1205.002**: Socket Filters
+- 📋 Sub-technique **T1560.001**: Archive via Utility
+- 📋 Sub-technique **T1021.005**: VNC
+- 🎯 Technique **T1113**: Screen Capture
+- 📋 Sub-technique **T1027.011**: Fileless Storage
+- 🎯 Technique **T1037**: Boot or Logon Initialization Scripts
+- 🎯 Technique **T1557**: Adversary-in-the-Middle
+- 🎯 Technique **T1033**: System Owner/User Discovery
+- 📋 Sub-technique **T1218.011**: Rundll32
+... and 429 more
+
+### Linux
+- Total: 353
+- Completed: 24
+- Remaining: 329
+- Coverage: 6.8%
+
+#### TODO (329 techniques)
+- 📋 Sub-technique **T1205.002**: Socket Filters
+- 📋 Sub-technique **T1560.001**: Archive via Utility
+- 📋 Sub-technique **T1021.005**: VNC
+- 🎯 Technique **T1113**: Screen Capture
+- 📋 Sub-technique **T1027.011**: Fileless Storage
+- 🎯 Technique **T1037**: Boot or Logon Initialization Scripts
+- 🎯 Technique **T1557**: Adversary-in-the-Middle
+- 🎯 Technique **T1033**: System Owner/User Discovery
+- 📋 Sub-technique **T1132.001**: Standard Encoding
+- 📋 Sub-technique **T1027.009**: Embedded Payloads
+... and 319 more
+
+### Macos
+- Total: 356
+- Completed: 24
+- Remaining: 332
+- Coverage: 6.74%
+
+#### TODO (332 techniques)
+- 📋 Sub-technique **T1205.002**: Socket Filters
+- 📋 Sub-technique **T1560.001**: Archive via Utility
+- 📋 Sub-technique **T1021.005**: VNC
+- 🎯 Technique **T1113**: Screen Capture
+- 🎯 Technique **T1037**: Boot or Logon Initialization Scripts
+- 🎯 Technique **T1557**: Adversary-in-the-Middle
+- 🎯 Technique **T1033**: System Owner/User Discovery
+- 📋 Sub-technique **T1132.001**: Standard Encoding
+- 📋 Sub-technique **T1027.009**: Embedded Payloads
+- 📋 Sub-technique **T1556.003**: Pluggable Authentication Modules
+... and 322 more
+
+### Pre
+- Total: 91
+- Completed: 0
+- Remaining: 91
+- Coverage: 0.0%
+
+#### TODO (91 techniques)
+- 🎯 Technique **T1583**: Acquire Infrastructure
+- 📋 Sub-technique **T1583.007**: Serverless
+- 🎯 Technique **T1592**: Gather Victim Host Information
+- 📋 Sub-technique **T1596.003**: Digital Certificates
+- 📋 Sub-technique **T1597.002**: Purchase Technical Data
+- 📋 Sub-technique **T1588.007**: Artificial Intelligence
+- 📋 Sub-technique **T1590.005**: IP Addresses
+- 📋 Sub-technique **T1590.002**: DNS
+- 📋 Sub-technique **T1584.008**: Network Devices
+- 📋 Sub-technique **T1583.008**: Malvertising
+... and 81 more
+
+### Containers
+- Total: 47
+- Completed: 3
+- Remaining: 44
+- Coverage: 6.38%
+
+#### TODO (44 techniques)
+- 🎯 Technique **T1613**: Container and Resource Discovery
+- 📋 Sub-technique **T1110.001**: Password Guessing
+- 🎯 Technique **T1543**: Create or Modify System Process
+- 🎯 Technique **T1133**: External Remote Services
+- 📋 Sub-technique **T1053.007**: Container Orchestration Job
+- 🎯 Technique **T1069**: Permission Groups Discovery
+- 📋 Sub-technique **T1036.005**: Match Legitimate Resource Name or Location
+- 📋 Sub-technique **T1098.006**: Additional Container Cluster Roles
+- 🎯 Technique **T1562**: Impair Defenses
+- 🎯 Technique **T1190**: Exploit Public-Facing Application
+... and 34 more
+
+### Iaas
+- Total: 102
+- Completed: 3
+- Remaining: 99
+- Coverage: 2.94%
+
+#### TODO (99 techniques)
+- 📋 Sub-technique **T1578.004**: Revert Cloud Instance
+- 📋 Sub-technique **T1110.001**: Password Guessing
+- 📋 Sub-technique **T1498.001**: Direct Network Flood
+- 🎯 Technique **T1666**: Modify Cloud Resource Hierarchy
+- 📋 Sub-technique **T1491.002**: External Defacement
+- 📋 Sub-technique **T1485.001**: Lifecycle-Triggered Deletion
+- 🎯 Technique **T1578**: Modify Cloud Compute Infrastructure
+- 🎯 Technique **T1069**: Permission Groups Discovery
+- 📋 Sub-technique **T1069.003**: Cloud Groups
+- 📋 Sub-technique **T1499.003**: Application Exhaustion Flood
+... and 89 more
+
+### Saas
+- Total: 65
+- Completed: 2
+- Remaining: 63
+- Coverage: 3.08%
+
+#### TODO (63 techniques)
+- 📋 Sub-technique **T1110.001**: Password Guessing
+- 🎯 Technique **T1539**: Steal Web Session Cookie
+- 📋 Sub-technique **T1496.003**: SMS Pumping
+- 🎯 Technique **T1069**: Permission Groups Discovery
+- 📋 Sub-technique **T1069.003**: Cloud Groups
+- 📋 Sub-technique **T1606.002**: SAML Tokens
+- 🎯 Technique **T1080**: Taint Shared Content
+- 📋 Sub-technique **T1566.002**: Spearphishing Link
+- 📋 Sub-technique **T1098.003**: Additional Cloud Roles
+- 🎯 Technique **T1119**: Automated Collection
+... and 53 more
+
+### Network_Devices
+- Total: 16
+- Completed: 0
+- Remaining: 16
+- Coverage: 0.0%
+
+#### TODO (16 techniques)
+- 🎯 Technique **T1602**: Data from Configuration Repository
+- 🎯 Technique **T1600**: Weaken Encryption
+- 📋 Sub-technique **T1542.005**: TFTP Boot
+- 📋 Sub-technique **T1600.001**: Reduce Key Space
+- 📋 Sub-technique **T1557.004**: Evil Twin
+- 📋 Sub-technique **T1599.001**: Network Address Translation Traversal
+- 📋 Sub-technique **T1602.002**: Network Device Configuration Dump
+- 📋 Sub-technique **T1600.002**: Disable Crypto Hardware
+- 📋 Sub-technique **T1059.008**: Network Device CLI
+- 📋 Sub-technique **T1542.004**: ROMMONkit
+... and 6 more
+
+### Esxi
+- Total: 3
+- Completed: 0
+- Remaining: 3
+- Coverage: 0.0%
+
+#### TODO (3 techniques)
+- 🎯 Technique **T1675**: ESXi Administration Command
+- 📋 Sub-technique **T1059.012**: Hypervisor CLI
+- 📋 Sub-technique **T1505.006**: vSphere Installation Bundles
+
+## Priority Recommendations
+
+### 🔥 High Priority (5 techniques)
+*Windows/Linux execution techniques - commonly targeted by attackers*
+- **T1053.003**: Cron (linux, macos)
+- **T1153**: Source (linux, macos)
+- **T1569.003**: Systemctl (linux)
+- **T1053.006**: Systemd Timers (linux)
+- **T1059.004**: Unix Shell (linux, macos)
+
+### 📈 Commonly Used (32 techniques)
+*Frequently encountered in real-world attacks*
+- **T1055.011**: Extra Window Memory Injection (windows)
+- **T1053.007**: Container Orchestration Job (containers)
+- **T1016.001**: Internet Connection Discovery (windows, linux, macos)
+- **T1053.003**: Cron (linux, macos)
+- **T1082**: System Information Discovery (iaas, windows, linux, macos)
+- **T1059.002**: AppleScript (macos)
+- **T1055.003**: Thread Execution Hijacking (windows)
+- **T1016.002**: Wi-Fi Discovery (windows, linux, macos)
+- **T1059.009**: Cloud API (iaas, saas)
+- **T1078.001**: Default Accounts (windows, linux, macos, saas, containers, iaas)
+- **T1055.013**: Process Doppelgänging (windows)
+- **T1016**: System Network Configuration Discovery (windows, linux, macos)
+- **T1083**: File and Directory Discovery (windows, linux, macos)
+- **T1055.004**: Asynchronous Procedure Call (windows)
+- **T1055.002**: Portable Executable Injection (windows)
+
+### 🆕 New Techniques (556 techniques)
+*Recently added or updated in MITRE ATT&CK*
+- **T1055.011**: Extra Window Memory Injection (windows)
+- **T1560.001**: Archive via Utility (windows, linux, macos)
+- **T1021.005**: VNC (windows, linux, macos)
+- **T1113**: Screen Capture (windows, linux, macos)
+- **T1027.011**: Fileless Storage (windows, linux)
+- **T1037**: Boot or Logon Initialization Scripts (windows, linux, macos)
+- **T1557**: Adversary-in-the-Middle (windows, linux, macos)
+- **T1033**: System Owner/User Discovery (windows, linux, macos)
+- **T1583**: Acquire Infrastructure (pre)
+- **T1218.011**: Rundll32 (windows)
+
+## Next Steps
+1. **Focus on High Priority**: Start with Windows/Linux execution techniques
+2. **Platform Specific**: Choose a platform to complete comprehensively
+3. **Incremental Progress**: Add 5-10 techniques per week
+4. **Automation**: Use the enhanced Ollama script for rapid documentation
+
+## Full TODO List
+Total remaining: 657 techniques
+
+### Windows TODO (439 techniques)
+- 📋 **T1055.011**: Extra Window Memory Injection
+- 📋 **T1205.002**: Socket Filters
+- 📋 **T1560.001**: Archive via Utility
+- 📋 **T1021.005**: VNC
+- 🎯 **T1113**: Screen Capture
+- 📋 **T1027.011**: Fileless Storage
+- 🎯 **T1037**: Boot or Logon Initialization Scripts
+- 🎯 **T1557**: Adversary-in-the-Middle
+- 🎯 **T1033**: System Owner/User Discovery
+- 📋 **T1218.011**: Rundll32
+- 📋 **T1132.001**: Standard Encoding
+- 📋 **T1027.009**: Embedded Payloads
+- 📋 **T1056.001**: Keylogging
+- 📋 **T1564.012**: File/Path Exclusions
+- 📋 **T1110.001**: Password Guessing
+- 📋 **T1216.001**: PubPrn
+- 🎯 **T1003**: OS Credential Dumping
+- 📋 **T1561.002**: Disk Structure Wipe
+- 📋 **T1498.001**: Direct Network Flood
+- 📋 **T1574.007**: Path Interception by PATH Environment Variable
+- 📋 **T1213.002**: Sharepoint
+- 🎯 **T1006**: Direct Volume Access
+- 📋 **T1564.008**: Email Hiding Rules
+- 📋 **T1491.002**: External Defacement
+- 📋 **T1027.013**: Encrypted/Encoded File
+- 📋 **T1499.001**: OS Exhaustion Flood
+- 🎯 **T1014**: Rootkit
+- 📋 **T1546.013**: PowerShell Profile
+- 🎯 **T1123**: Audio Capture
+- 🎯 **T1543**: Create or Modify System Process
+- 🎯 **T1133**: External Remote Services
+- 🎯 **T1539**: Steal Web Session Cookie
+- 📋 **T1568.002**: Domain Generation Algorithms
+- 📋 **T1036.007**: Double File Extension
+- 📋 **T1548.002**: Bypass User Account Control
+- 📋 **T1016.001**: Internet Connection Discovery
+- 📋 **T1560.003**: Archive via Custom Method
+- 🎯 **T1069**: Permission Groups Discovery
+- 🎯 **T1114**: Email Collection
+- 📋 **T1003.002**: Security Account Manager
+- 📋 **T1542.001**: System Firmware
+- 📋 **T1574.011**: Services Registry Permissions Weakness
+- 📋 **T1499.003**: Application Exhaustion Flood
+- 📋 **T1195.001**: Compromise Software Dependencies and Development Tools
+- 🎯 **T1561**: Disk Wipe
+- 📋 **T1071.004**: DNS
+- 🎯 **T1615**: Group Policy Discovery
+- 📋 **T1542.003**: Bootkit
+- 🎯 **T1025**: Data from Removable Media
+- 📋 **T1218.013**: Mavinject
+- 📋 **T1074.001**: Local Data Staging
+- 📋 **T1036.005**: Match Legitimate Resource Name or Location
+- 📋 **T1565.001**: Stored Data Manipulation
+- 📋 **T1110.002**: Password Cracking
+- 📋 **T1114.001**: Local Email Collection
+- 📋 **T1003.004**: LSA Secrets
+- 📋 **T1606.002**: SAML Tokens
+- 📋 **T1036.008**: Masquerade File Type
+- 🎯 **T1489**: Service Stop
+- 🎯 **T1652**: Device Driver Discovery
+- 📋 **T1087.002**: Domain Account
+- 📋 **T1547.014**: Active Setup
+- 🎯 **T1564**: Hide Artifacts
+- 📋 **T1071.005**: Publish/Subscribe Protocols
+- 🎯 **T1080**: Taint Shared Content
+- 📋 **T1484.002**: Trust Modification
+- 📋 **T1573.001**: Symmetric Cryptography
+- 📋 **T1087.001**: Local Account
+- 📋 **T1176.001**: Browser Extensions
+- 📋 **T1562.009**: Safe Mode Boot
+- 📋 **T1543.003**: Windows Service
+- 📋 **T1568.001**: Fast Flux DNS
+- 📋 **T1497.001**: System Checks
+- 📋 **T1069.002**: Domain Groups
+- 📋 **T1566.002**: Spearphishing Link
+- 📋 **T1499.004**: Application or System Exploitation
+- 🎯 **T1137**: Office Application Startup
+- 📋 **T1218.004**: InstallUtil
+- 📋 **T1547.012**: Print Processors
+- 📋 **T1566.001**: Spearphishing Attachment
+- 📋 **T1027.008**: Stripped Payloads
+- 📋 **T1574.001**: DLL
+- 🎯 **T1119**: Automated Collection
+- 🎯 **T1115**: Clipboard Data
+- 📋 **T1555.005**: Password Managers
+- 🎯 **T1007**: System Service Discovery
+- 🎯 **T1040**: Network Sniffing
+- 📋 **T1553.002**: Code Signing
+- 📋 **T1565.003**: Runtime Data Manipulation
+- 📋 **T1552.002**: Credentials in Registry
+- 🎯 **T1135**: Network Share Discovery
+- 🎯 **T1120**: Peripheral Device Discovery
+- 📋 **T1222.001**: Windows File and Directory Permissions Modification
+- 📋 **T1137.006**: Add-ins
+- 📋 **T1505.002**: Transport Agent
+- 🎯 **T1082**: System Information Discovery
+- 🎯 **T1071**: Application Layer Protocol
+- 📋 **T1574.014**: AppDomainManager
+- 📋 **T1074.002**: Remote Data Staging
+- 📋 **T1218.007**: Msiexec
+- 📋 **T1498.002**: Reflection Amplification
+- 📋 **T1556.002**: Password Filter DLL
+- 📋 **T1505.005**: Terminal Services DLL
+- 🎯 **T1176**: Software Extensions
+- 📋 **T1499.002**: Service Exhaustion Flood
+- 📋 **T1195.003**: Compromise Hardware Supply Chain
+- 📋 **T1070.007**: Clear Network Connection History and Configurations
+- 📋 **T1558.004**: AS-REP Roasting
+- 📋 **T1070.003**: Clear Command History
+- 🎯 **T1202**: Indirect Command Execution
+- 🎯 **T1091**: Replication Through Removable Media
+- 🎯 **T1005**: Data from Local System
+- 🎯 **T1140**: Deobfuscate/Decode Files or Information
+- 📋 **T1137.005**: Outlook Rules
+- 🎯 **T1562**: Impair Defenses
+- 📋 **T1098.007**: Additional Local or Domain Groups
+- 🎯 **T1195**: Supply Chain Compromise
+- 🎯 **T1190**: Exploit Public-Facing Application
+- 🎯 **T1558**: Steal or Forge Kerberos Tickets
+- 🎯 **T1555**: Credentials from Password Stores
+- 🎯 **T1567**: Exfiltration Over Web Service
+- 🎯 **T1219**: Remote Access Tools
+- 📋 **T1560.002**: Archive via Library
+- 📋 **T1055.003**: Thread Execution Hijacking
+- 🎯 **T1036**: Masquerading
+- 📋 **T1546.011**: Application Shimming
+- 📋 **T1547.010**: Port Monitors
+- 📋 **T1070.008**: Clear Mailbox Data
+- 🎯 **T1659**: Content Injection
+- 📋 **T1567.004**: Exfiltration Over Webhook
+- 🎯 **T1205**: Traffic Signaling
+- 🎯 **T1218**: System Binary Proxy Execution
+- 📋 **T1070.006**: Timestomp
+- 🎯 **T1620**: Reflective Code Loading
+- 📋 **T1016.002**: Wi-Fi Discovery
+- 📋 **T1480.002**: Mutual Exclusion
+- 📋 **T1564.011**: Ignore Process Interrupts
+- 🎯 **T1611**: Escape to Host
+- 📋 **T1547.009**: Shortcut Modification
+- 🎯 **T1010**: Application Window Discovery
+- 📋 **T1087.003**: Email Account
+- 🎯 **T1062**: Hypervisor
+- 📋 **T1497.003**: Time Based Evasion
+- 📋 **T1218.003**: CMSTP
+- 📋 **T1562.002**: Disable Windows Event Logging
+- 🎯 **T1029**: Scheduled Transfer
+- 📋 **T1021.002**: SMB/Windows Admin Shares
+- 🎯 **T1572**: Protocol Tunneling
+- 📋 **T1218.002**: Control Panel
+- 📋 **T1547.005**: Security Support Provider
+- 🎯 **T1550**: Use Alternate Authentication Material
+- 🎯 **T1011**: Exfiltration Over Other Network Medium
+- 📋 **T1562.004**: Disable or Modify System Firewall
+- 🎯 **T1560**: Archive Collected Data
+- 📋 **T1553.003**: SIP and Trust Provider Hijacking
+- 🎯 **T1185**: Browser Session Hijacking
+- 🎯 **T1021**: Remote Services
+- 📋 **T1071.003**: Mail Protocols
+- 📋 **T1556.007**: Hybrid Identity
+- 📋 **T1218.015**: Electron Applications
+- 🎯 **T1207**: Rogue Domain Controller
+- 📋 **T1553.006**: Code Signing Policy Modification
+- 🎯 **T1112**: Modify Registry
+- 📋 **T1555.003**: Credentials from Web Browsers
+- 📋 **T1574.008**: Path Interception by Search Order Hijacking
+- 🎯 **T1491**: Defacement
+- 📋 **T1557.003**: DHCP Spoofing
+- 🎯 **T1563**: Remote Service Session Hijacking
+- 📋 **T1027.001**: Binary Padding
+- 📋 **T1505.003**: Web Shell
+- 📋 **T1484.001**: Group Policy Modification
+- 🎯 **T1217**: Browser Information Discovery
+- 📋 **T1552.004**: Private Keys
+- 📋 **T1021.006**: Windows Remote Management
+- 📋 **T1011.001**: Exfiltration Over Bluetooth
+- 📋 **T1078.001**: Default Accounts
+- 📋 **T1547.003**: Time Providers
+- 📋 **T1136.001**: Local Account
+- 🎯 **T1092**: Communication Through Removable Media
+- 📋 **T1070.001**: Clear Windows Event Logs
+- 📋 **T1557.001**: LLMNR/NBT-NS Poisoning and SMB Relay
+- 🎯 **T1222**: File and Directory Permissions Modification
+- 📋 **T1003.001**: LSASS Memory
+- 📋 **T1176.002**: IDE Extensions
+- 📋 **T1027.016**: Junk Code Insertion
+- 🎯 **T1548**: Abuse Elevation Control Mechanism
+- 📋 **T1134.002**: Create Process with Token
+- 📋 **T1547.004**: Winlogon Helper DLL
+- 📋 **T1021.003**: Distributed Component Object Model
+- 📋 **T1110.003**: Password Spraying
+- 📋 **T1090.002**: External Proxy
+- 📋 **T1056.003**: Web Portal Capture
+- 🎯 **T1108**: Redundant Access
+- 📋 **T1003.005**: Cached Domain Credentials
+- 🎯 **T1673**: Virtual Machine Discovery
+- 📋 **T1546.012**: Image File Execution Options Injection
+- 📋 **T1218.008**: Odbcconf
+- 🎯 **T1125**: Video Capture
+- 📋 **T1055.013**: Process Doppelgänging
+- 🎯 **T1016**: System Network Configuration Discovery
+- 📋 **T1574.005**: Executable Installer File Permissions Weakness
+- 📋 **T1546.008**: Accessibility Features
+- 📋 **T1496.002**: Bandwidth Hijacking
+- 🎯 **T1087**: Account Discovery
+- 🎯 **T1090**: Proxy
+- 📋 **T1562.006**: Indicator Blocking
+- 📋 **T1136.002**: Domain Account
+- 🎯 **T1482**: Domain Trust Discovery
+- 📋 **T1558.001**: Golden Ticket
+- 🎯 **T1020**: Automated Exfiltration
+- 📋 **T1219.001**: IDE Tunneling
+- 📋 **T1036.002**: Right-to-Left Override
+- 📋 **T1027.017**: SVG Smuggling
+- 📋 **T1542.002**: Component Firmware
+- 🎯 **T1070**: Indicator Removal
+- 📋 **T1048.001**: Exfiltration Over Symmetric Encrypted Non-C2 Protocol
+- 📋 **T1137.001**: Office Template Macros
+- 📋 **T1550.003**: Pass the Ticket
+- 🎯 **T1083**: File and Directory Discovery
+- 🎯 **T1568**: Dynamic Resolution
+- 📋 **T1036.004**: Masquerade Task or Service
+- 📋 **T1055.004**: Asynchronous Procedure Call
+- 📋 **T1127.003**: JamPlus
+- 📋 **T1546.009**: AppCert DLLs
+- 📋 **T1114.003**: Email Forwarding Rule
+- 🎯 **T1074**: Data Staged
+- 🎯 **T1649**: Steal or Forge Authentication Certificates
+- 📋 **T1098.005**: Device Registration
+- 🎯 **T1049**: System Network Connections Discovery
+- 📋 **T1553.005**: Mark-of-the-Web Bypass
+- 🎯 **T1542**: Pre-OS Boot
+- 🎯 **T1051**: Shared Webroot
+- 📋 **T1055.002**: Portable Executable Injection
+- 📋 **T1218.012**: Verclsid
+- 📋 **T1562.010**: Downgrade Attack
+- 🎯 **T1497**: Virtualization/Sandbox Evasion
+- 🎯 **T1102**: Web Service
+- 📋 **T1552.001**: Credentials In Files
+- 📋 **T1568.003**: DNS Calculation
+- 📋 **T1218.005**: Mshta
+- 🎯 **T1104**: Multi-Stage Channels
+- 🎯 **T1657**: Financial Theft
+- 🎯 **T1480**: Execution Guardrails
+- 📋 **T1606.001**: Web Cookies
+- 🎯 **T1654**: Log Enumeration
+- 📋 **T1134.001**: Token Impersonation/Theft
+- 📋 **T1567.001**: Exfiltration to Code Repository
+- 📋 **T1205.001**: Port Knocking
+- 📋 **T1027.012**: LNK Icon Smuggling
+- 📋 **T1491.001**: Internal Defacement
+- 📋 **T1564.002**: Hidden Users
+- 📋 **T1134.003**: Make and Impersonate Token
+- 📋 **T1552.006**: Group Policy Preferences
+- 📋 **T1048.002**: Exfiltration Over Asymmetric Encrypted Non-C2 Protocol
+- 🎯 **T1057**: Process Discovery
+- 📋 **T1562.003**: Impair Command History Logging
+- 📋 **T1556.008**: Network Provider DLL
+- 📋 **T1546.003**: Windows Management Instrumentation Event Subscription
+- 📋 **T1497.002**: User Activity Based Checks
+- 🎯 **T1041**: Exfiltration Over C2 Channel
+- 📋 **T1134.004**: Parent PID Spoofing
+- 🎯 **T1606**: Forge Web Credentials
+- 🎯 **T1621**: Multi-Factor Authentication Request Generation
+- 🎯 **T1554**: Compromise Host Software Binary
+- 📋 **T1546.001**: Change Default File Association
+- 🎯 **T1026**: Multiband Communication
+- 📋 **T1071.002**: File Transfer Protocols
+- 🎯 **T1212**: Exploitation for Credential Access
+- 📋 **T1102.003**: One-Way Communication
+- 🎯 **T1210**: Exploitation of Remote Services
+- 🎯 **T1534**: Internal Spearphishing
+- 📋 **T1574.010**: Services File Permissions Weakness
+- 📋 **T1547.001**: Registry Run Keys / Startup Folder
+- 🎯 **T1199**: Trusted Relationship
+- 📋 **T1069.001**: Local Groups
+- 🎯 **T1098**: Account Manipulation
+- 🎯 **T1048**: Exfiltration Over Alternative Protocol
+- 📋 **T1056.002**: GUI Input Capture
+- 📋 **T1052.001**: Exfiltration over USB
+- 📋 **T1574.013**: KernelCallbackTable
+- 🎯 **T1566**: Phishing
+- 📋 **T1218.001**: Compiled HTML File
+- 📋 **T1496.001**: Compute Hijacking
+- 📋 **T1070.005**: Network Share Connection Removal
+- 📋 **T1090.003**: Multi-hop Proxy
+- 🎯 **T1110**: Brute Force
+- 📋 **T1137.003**: Outlook Forms
+- 📋 **T1219.003**: Remote Access Hardware
+- 📋 **T1562.001**: Disable or Modify Tools
+- 🎯 **T1565**: Data Manipulation
+- 🎯 **T1001**: Data Obfuscation
+- 🎯 **T1039**: Data from Network Shared Drive
+- 📋 **T1027.005**: Indicator Removal from Tools
+- 🎯 **T1078**: Valid Accounts
+- 🎯 **T1571**: Non-Standard Port
+- 📋 **T1055.012**: Process Hollowing
+- 🎯 **T1068**: Exploitation for Privilege Escalation
+- 🎯 **T1531**: Account Access Removal
+- 📋 **T1110.004**: Credential Stuffing
+- 🎯 **T1027**: Obfuscated Files or Information
+- 📋 **T1556.006**: Multi-Factor Authentication
+- 📋 **T1114.002**: Remote Email Collection
+- 📋 **T1505.004**: IIS Components
+- 📋 **T1036.001**: Invalid Code Signature
+- 📋 **T1564.006**: Run Virtual Instance
+- 📋 **T1027.014**: Polymorphic Code
+- 🎯 **T1201**: Password Policy Discovery
+- 🎯 **T1546**: Event Triggered Execution
+- 🎯 **T1187**: Forced Authentication
+- 📋 **T1134.005**: SID-History Injection
+- 🎯 **T1486**: Data Encrypted for Impact
+- 🎯 **T1553**: Subvert Trust Controls
+- 🎯 **T1573**: Encrypted Channel
+- 📋 **T1547.002**: Authentication Package
+- 📋 **T1218.010**: Regsvr32
+- 📋 **T1567.003**: Exfiltration to Text Storage Sites
+- 🎯 **T1056**: Input Capture
+- 📋 **T1566.004**: Spearphishing Voice
+- 📋 **T1546.015**: Component Object Model Hijacking
+- 📋 **T1195.002**: Compromise Software Supply Chain
+- 📋 **T1036.003**: Rename Legitimate Utilities
+- 📋 **T1102.002**: Bidirectional Communication
+- 🎯 **T1667**: Email Bombing
+- 📋 **T1562.011**: Spoof Security Alerting
+- 📋 **T1137.004**: Outlook Home Page
+- 📋 **T1573.002**: Asymmetric Cryptography
+- 📋 **T1567.002**: Exfiltration to Cloud Storage
+- 🎯 **T1570**: Lateral Tool Transfer
+- 📋 **T1574.009**: Path Interception by Unquoted Path
+- 📋 **T1614.001**: System Language Discovery
+- 🎯 **T1095**: Non-Application Layer Protocol
+- 📋 **T1027.003**: Steganography
+- 📋 **T1001.003**: Protocol or Service Impersonation
+- 🎯 **T1012**: Query Registry
+- 🎯 **T1030**: Data Transfer Size Limits
+- 📋 **T1078.002**: Domain Accounts
+- 📋 **T1218.009**: Regsvcs/Regasm
+- 🎯 **T1034**: Path Interception
+- 📋 **T1553.004**: Install Root Certificate
+- 📋 **T1037.003**: Network Logon Script
+- 🎯 **T1499**: Endpoint Denial of Service
+- 📋 **T1027.004**: Compile After Delivery
+- 🎯 **T1614**: System Location Discovery
+- 📋 **T1564.007**: VBA Stomping
+- 🎯 **T1197**: BITS Jobs
+- 📋 **T1127.001**: MSBuild
+- 🎯 **T1656**: Impersonation
+- 📋 **T1090.004**: Domain Fronting
+- 📋 **T1557.002**: ARP Cache Poisoning
+- 📋 **T1518.001**: Security Software Discovery
+- 📋 **T1564.003**: Hidden Window
+- 📋 **T1127.002**: ClickOnce
+- 📋 **T1070.010**: Relocate Malware
+- 🎯 **T1132**: Data Encoding
+- 📋 **T1546.010**: AppInit DLLs
+- 🎯 **T1496**: Resource Hijacking
+- 📋 **T1546.002**: Screensaver
+- 📋 **T1565.002**: Transmitted Data Manipulation
+- 📋 **T1558.002**: Silver Ticket
+- 🎯 **T1213**: Data from Information Repositories
+- 📋 **T1070.009**: Clear Persistence
+- 📋 **T1555.004**: Windows Credential Manager
+- 📋 **T1036.010**: Masquerade Account Name
+- 🎯 **T1200**: Hardware Additions
+- 📋 **T1219.002**: Remote Desktop Software
+- 🎯 **T1505**: Server Software Component
+- 🎯 **T1485**: Data Destruction
+- 📋 **T1132.002**: Non-Standard Encoding
+- 📋 **T1556.001**: Domain Controller Authentication
+- 📋 **T1027.006**: HTML Smuggling
+- 📋 **T1556.005**: Reversible Encryption
+- 📋 **T1027.010**: Command Obfuscation
+- 📋 **T1070.004**: File Deletion
+- 🎯 **T1189**: Drive-by Compromise
+- 🎯 **T1498**: Network Denial of Service
+- 📋 **T1546.016**: Installer Packages
+- 🎯 **T1221**: Template Injection
+- 🎯 **T1134**: Access Token Manipulation
+- 🎯 **T1111**: Multi-Factor Authentication Interception
+- 📋 **T1027.002**: Software Packing
+- 📋 **T1071.001**: Web Protocols
+- 📋 **T1564.005**: Hidden File System
+- 🎯 **T1668**: Exclusive Control
+- 📋 **T1563.002**: RDP Hijacking
+- 🎯 **T1136**: Create Account
+- 🎯 **T1672**: Email Spoofing
+- 🎯 **T1018**: Remote System Discovery
+- 🎯 **T1046**: Network Service Discovery
+- 🎯 **T1518**: Software Discovery
+- 📋 **T1055.005**: Thread Local Storage
+- 🎯 **T1622**: Debugger Evasion
+- 📋 **T1550.002**: Pass the Hash
+- 🎯 **T1052**: Exfiltration Over Physical Medium
+- 🎯 **T1105**: Ingress Tool Transfer
+- 📋 **T1216.002**: SyncAppvPublishingServer
+- 📋 **T1098.002**: Additional Email Delegate Permissions
+- 🎯 **T1653**: Power Settings
+- 📋 **T1027.007**: Dynamic API Resolution
+- 📋 **T1021.001**: Remote Desktop Protocol
+- 📋 **T1037.001**: Logon Script (Windows)
+- 📋 **T1055.015**: ListPlanting
+- 🎯 **T1665**: Hide Infrastructure
+- 🎯 **T1484**: Domain or Tenant Policy Modification
+- 🎯 **T1220**: XSL Script Processing
+- 📋 **T1564.001**: Hidden Files and Directories
+- 📋 **T1137.002**: Office Test
+- 📋 **T1003.003**: NTDS
+- 📋 **T1001.002**: Steganography
+- 📋 **T1547.008**: LSASS Driver
+- 📋 **T1480.001**: Environmental Keying
+- 🎯 **T1008**: Fallback Channels
+- 📋 **T1564.004**: NTFS File Attributes
+- 📋 **T1558.003**: Kerberoasting
+- 📋 **T1003.006**: DCSync
+- 🎯 **T1124**: System Time Discovery
+- 📋 **T1055.001**: Dynamic-link Library Injection
+- 🎯 **T1556**: Modify Authentication Process
+- 📋 **T1056.004**: Credential API Hooking
+- 🎯 **T1495**: Firmware Corruption
+- 🎯 **T1490**: Inhibit System Recovery
+- 📋 **T1546.007**: Netsh Helper DLL
+- 📋 **T1566.003**: Spearphishing via Service
+- 📋 **T1090.001**: Internal Proxy
+- 🎯 **T1216**: System Script Proxy Execution
+- 📋 **T1102.001**: Dead Drop Resolver
+- 📋 **T1001.001**: Junk Data
+- 🎯 **T1043**: Commonly Used Port
+- 📋 **T1505.001**: SQL Stored Procedures
+- 📋 **T1561.001**: Disk Content Wipe
+- 📋 **T1048.003**: Exfiltration Over Unencrypted Non-C2 Protocol
+- 📋 **T1027.015**: Compression
+- 📋 **T1078.003**: Local Accounts
+- 🎯 **T1669**: Wi-Fi Networks
+- 🎯 **T1211**: Exploitation for Defense Evasion
+- 🎯 **T1127**: Trusted Developer Utilities Proxy Execution
+- 🎯 **T1529**: System Shutdown/Reboot
+- 📋 **T1218.014**: MMC
+- 📋 **T1564.010**: Process Argument Spoofing
+- 📋 **T1574.012**: COR_PROFILER
+
+### Linux TODO (329 techniques)
+- 📋 **T1205.002**: Socket Filters
+- 📋 **T1560.001**: Archive via Utility
+- 📋 **T1021.005**: VNC
+- 🎯 **T1113**: Screen Capture
+- 📋 **T1027.011**: Fileless Storage
+- 🎯 **T1037**: Boot or Logon Initialization Scripts
+- 🎯 **T1557**: Adversary-in-the-Middle
+- 🎯 **T1033**: System Owner/User Discovery
+- 📋 **T1132.001**: Standard Encoding
+- 📋 **T1027.009**: Embedded Payloads
+- 📋 **T1556.003**: Pluggable Authentication Modules
+- 📋 **T1056.001**: Keylogging
+- 📋 **T1564.012**: File/Path Exclusions
+- 📋 **T1222.002**: Linux and Mac File and Directory Permissions Modification
+- 📋 **T1110.001**: Password Guessing
+- 🎯 **T1003**: OS Credential Dumping
+- 📋 **T1561.002**: Disk Structure Wipe
+- 📋 **T1498.001**: Direct Network Flood
+- 📋 **T1574.007**: Path Interception by PATH Environment Variable
+- 📋 **T1564.008**: Email Hiding Rules
+- 📋 **T1491.002**: External Defacement
+- 📋 **T1027.013**: Encrypted/Encoded File
+- 📋 **T1499.001**: OS Exhaustion Flood
+- 🎯 **T1014**: Rootkit
+- 🎯 **T1123**: Audio Capture
+- 🎯 **T1543**: Create or Modify System Process
+- 🎯 **T1133**: External Remote Services
+- 🎯 **T1539**: Steal Web Session Cookie
+- 📋 **T1568.002**: Domain Generation Algorithms
+- 📋 **T1016.001**: Internet Connection Discovery
+- 📋 **T1548.003**: Sudo and Sudo Caching
+- 📋 **T1560.003**: Archive via Custom Method
+- 🎯 **T1069**: Permission Groups Discovery
+- 🎯 **T1114**: Email Collection
+- 📋 **T1499.003**: Application Exhaustion Flood
+- 📋 **T1195.001**: Compromise Software Dependencies and Development Tools
+- 🎯 **T1561**: Disk Wipe
+- 📋 **T1071.004**: DNS
+- 📋 **T1555.002**: Securityd Memory
+- 📋 **T1542.003**: Bootkit
+- 🎯 **T1025**: Data from Removable Media
+- 📋 **T1074.001**: Local Data Staging
+- 📋 **T1036.005**: Match Legitimate Resource Name or Location
+- 📋 **T1565.001**: Stored Data Manipulation
+- 📋 **T1110.002**: Password Cracking
+- 📋 **T1036.008**: Masquerade File Type
+- 🎯 **T1489**: Service Stop
+- 🎯 **T1652**: Device Driver Discovery
+- 📋 **T1087.002**: Domain Account
+- 🎯 **T1564**: Hide Artifacts
+- 📋 **T1071.005**: Publish/Subscribe Protocols
+- 🎯 **T1080**: Taint Shared Content
+- 📋 **T1573.001**: Symmetric Cryptography
+- 📋 **T1087.001**: Local Account
+- 📋 **T1176.001**: Browser Extensions
+- 📋 **T1568.001**: Fast Flux DNS
+- 📋 **T1497.001**: System Checks
+- 📋 **T1053.003**: Cron
+- 📋 **T1069.002**: Domain Groups
+- 📋 **T1566.002**: Spearphishing Link
+- 📋 **T1070.002**: Clear Linux or Mac System Logs
+- 📋 **T1499.004**: Application or System Exploitation
+- 📋 **T1021.004**: SSH
+- 📋 **T1566.001**: Spearphishing Attachment
+- 📋 **T1027.008**: Stripped Payloads
+- 🎯 **T1119**: Automated Collection
+- 🎯 **T1115**: Clipboard Data
+- 📋 **T1003.007**: Proc Filesystem
+- 📋 **T1555.005**: Password Managers
+- 🎯 **T1007**: System Service Discovery
+- 🎯 **T1040**: Network Sniffing
+- 📋 **T1565.003**: Runtime Data Manipulation
+- 🎯 **T1135**: Network Share Discovery
+- 🎯 **T1120**: Peripheral Device Discovery
+- 📋 **T1036.009**: Break Process Trees
+- 📋 **T1505.002**: Transport Agent
+- 🎯 **T1082**: System Information Discovery
+- 🎯 **T1071**: Application Layer Protocol
+- 📋 **T1074.002**: Remote Data Staging
+- 📋 **T1498.002**: Reflection Amplification
+- 🎯 **T1176**: Software Extensions
+- 📋 **T1499.002**: Service Exhaustion Flood
+- 📋 **T1195.003**: Compromise Hardware Supply Chain
+- 📋 **T1558.005**: Ccache Files
+- 📋 **T1070.007**: Clear Network Connection History and Configurations
+- 📋 **T1070.003**: Clear Command History
+- 🎯 **T1005**: Data from Local System
+- 🎯 **T1140**: Deobfuscate/Decode Files or Information
+- 🎯 **T1562**: Impair Defenses
+- 📋 **T1098.007**: Additional Local or Domain Groups
+- 🎯 **T1195**: Supply Chain Compromise
+- 🎯 **T1190**: Exploit Public-Facing Application
+- 🎯 **T1558**: Steal or Forge Kerberos Tickets
+- 🎯 **T1555**: Credentials from Password Stores
+- 🎯 **T1567**: Exfiltration Over Web Service
+- 🎯 **T1219**: Remote Access Tools
+- 📋 **T1560.002**: Archive via Library
+- 🎯 **T1036**: Masquerading
+- 📋 **T1070.008**: Clear Mailbox Data
+- 🎯 **T1659**: Content Injection
+- 📋 **T1567.004**: Exfiltration Over Webhook
+- 🎯 **T1205**: Traffic Signaling
+- 🎯 **T1218**: System Binary Proxy Execution
+- 🎯 **T1153**: Source
+- 📋 **T1070.006**: Timestomp
+- 🎯 **T1620**: Reflective Code Loading
+- 📋 **T1016.002**: Wi-Fi Discovery
+- 📋 **T1480.002**: Mutual Exclusion
+- 📋 **T1564.011**: Ignore Process Interrupts
+- 🎯 **T1611**: Escape to Host
+- 🎯 **T1010**: Application Window Discovery
+- 📋 **T1569.003**: Systemctl
+- 📋 **T1497.003**: Time Based Evasion
+- 📋 **T1563.001**: SSH Hijacking
+- 🎯 **T1029**: Scheduled Transfer
+- 🎯 **T1572**: Protocol Tunneling
+- 📋 **T1036.011**: Overwrite Process Arguments
+- 🎯 **T1550**: Use Alternate Authentication Material
+- 🎯 **T1011**: Exfiltration Over Other Network Medium
+- 📋 **T1562.004**: Disable or Modify System Firewall
+- 🎯 **T1560**: Archive Collected Data
+- 🎯 **T1021**: Remote Services
+- 📋 **T1071.003**: Mail Protocols
+- 📋 **T1218.015**: Electron Applications
+- 📋 **T1562.012**: Disable or Modify Linux Audit System
+- 📋 **T1555.003**: Credentials from Web Browsers
+- 🎯 **T1491**: Defacement
+- 📋 **T1557.003**: DHCP Spoofing
+- 🎯 **T1563**: Remote Service Session Hijacking
+- 📋 **T1564.013**: Bind Mounts
+- 📋 **T1027.001**: Binary Padding
+- 📋 **T1505.003**: Web Shell
+- 🎯 **T1217**: Browser Information Discovery
+- 📋 **T1552.004**: Private Keys
+- 📋 **T1011.001**: Exfiltration Over Bluetooth
+- 📋 **T1078.001**: Default Accounts
+- 📋 **T1546.005**: Trap
+- 📋 **T1574.006**: Dynamic Linker Hijacking
+- 📋 **T1136.001**: Local Account
+- 🎯 **T1092**: Communication Through Removable Media
+- 🎯 **T1222**: File and Directory Permissions Modification
+- 📋 **T1176.002**: IDE Extensions
+- 📋 **T1027.016**: Junk Code Insertion
+- 🎯 **T1548**: Abuse Elevation Control Mechanism
+- 📋 **T1548.001**: Setuid and Setgid
+- 📋 **T1110.003**: Password Spraying
+- 📋 **T1090.002**: External Proxy
+- 📋 **T1056.003**: Web Portal Capture
+- 🎯 **T1108**: Redundant Access
+- 📋 **T1003.005**: Cached Domain Credentials
+- 📋 **T1098.004**: SSH Authorized Keys
+- 🎯 **T1673**: Virtual Machine Discovery
+- 🎯 **T1125**: Video Capture
+- 🎯 **T1016**: System Network Configuration Discovery
+- 📋 **T1496.002**: Bandwidth Hijacking
+- 🎯 **T1087**: Account Discovery
+- 🎯 **T1090**: Proxy
+- 📋 **T1562.006**: Indicator Blocking
+- 📋 **T1136.002**: Domain Account
+- 📋 **T1564.014**: Extended Attributes
+- 🎯 **T1020**: Automated Exfiltration
+- 📋 **T1219.001**: IDE Tunneling
+- 📋 **T1036.002**: Right-to-Left Override
+- 📋 **T1027.017**: SVG Smuggling
+- 📋 **T1542.002**: Component Firmware
+- 🎯 **T1070**: Indicator Removal
+- 📋 **T1048.001**: Exfiltration Over Symmetric Encrypted Non-C2 Protocol
+- 🎯 **T1083**: File and Directory Discovery
+- 🎯 **T1568**: Dynamic Resolution
+- 📋 **T1036.004**: Masquerade Task or Service
+- 📋 **T1114.003**: Email Forwarding Rule
+- 🎯 **T1074**: Data Staged
+- 🎯 **T1649**: Steal or Forge Authentication Certificates
+- 🎯 **T1049**: System Network Connections Discovery
+- 🎯 **T1542**: Pre-OS Boot
+- 📋 **T1552.003**: Bash History
+- 📋 **T1562.010**: Downgrade Attack
+- 🎯 **T1497**: Virtualization/Sandbox Evasion
+- 🎯 **T1102**: Web Service
+- 📋 **T1552.001**: Credentials In Files
+- 📋 **T1568.003**: DNS Calculation
+- 🎯 **T1104**: Multi-Stage Channels
+- 🎯 **T1657**: Financial Theft
+- 🎯 **T1480**: Execution Guardrails
+- 📋 **T1606.001**: Web Cookies
+- 🎯 **T1654**: Log Enumeration
+- 📋 **T1567.001**: Exfiltration to Code Repository
+- 📋 **T1205.001**: Port Knocking
+- 📋 **T1491.001**: Internal Defacement
+- 📋 **T1564.002**: Hidden Users
+- 📋 **T1048.002**: Exfiltration Over Asymmetric Encrypted Non-C2 Protocol
+- 🎯 **T1057**: Process Discovery
+- 📋 **T1562.003**: Impair Command History Logging
+- 📋 **T1497.002**: User Activity Based Checks
+- 🎯 **T1041**: Exfiltration Over C2 Channel
+- 🎯 **T1606**: Forge Web Credentials
+- 🎯 **T1621**: Multi-Factor Authentication Request Generation
+- 🎯 **T1554**: Compromise Host Software Binary
+- 📋 **T1055.014**: VDSO Hijacking
+- 🎯 **T1026**: Multiband Communication
+- 📋 **T1071.002**: File Transfer Protocols
+- 🎯 **T1212**: Exploitation for Credential Access
+- 📋 **T1102.003**: One-Way Communication
+- 🎯 **T1210**: Exploitation of Remote Services
+- 🎯 **T1534**: Internal Spearphishing
+- 🎯 **T1199**: Trusted Relationship
+- 📋 **T1069.001**: Local Groups
+- 🎯 **T1098**: Account Manipulation
+- 🎯 **T1048**: Exfiltration Over Alternative Protocol
+- 📋 **T1547.006**: Kernel Modules and Extensions
+- 📋 **T1056.002**: GUI Input Capture
+- 📋 **T1052.001**: Exfiltration over USB
+- 📋 **T1053.006**: Systemd Timers
+- 🎯 **T1566**: Phishing
+- 📋 **T1496.001**: Compute Hijacking
+- 📋 **T1090.003**: Multi-hop Proxy
+- 🎯 **T1110**: Brute Force
+- 📋 **T1059.004**: Unix Shell
+- 📋 **T1219.003**: Remote Access Hardware
+- 📋 **T1562.001**: Disable or Modify Tools
+- 🎯 **T1565**: Data Manipulation
+- 🎯 **T1001**: Data Obfuscation
+- 🎯 **T1039**: Data from Network Shared Drive
+- 📋 **T1027.005**: Indicator Removal from Tools
+- 🎯 **T1078**: Valid Accounts
+- 🎯 **T1571**: Non-Standard Port
+- 🎯 **T1068**: Exploitation for Privilege Escalation
+- 🎯 **T1531**: Account Access Removal
+- 📋 **T1110.004**: Credential Stuffing
+- 🎯 **T1027**: Obfuscated Files or Information
+- 📋 **T1556.006**: Multi-Factor Authentication
+- 📋 **T1564.006**: Run Virtual Instance
+- 📋 **T1027.014**: Polymorphic Code
+- 🎯 **T1201**: Password Policy Discovery
+- 🎯 **T1546**: Event Triggered Execution
+- 📋 **T1546.004**: Unix Shell Configuration Modification
+- 🎯 **T1486**: Data Encrypted for Impact
+- 🎯 **T1553**: Subvert Trust Controls
+- 🎯 **T1573**: Encrypted Channel
+- 📋 **T1567.003**: Exfiltration to Text Storage Sites
+- 🎯 **T1056**: Input Capture
+- 📋 **T1566.004**: Spearphishing Voice
+- 📋 **T1195.002**: Compromise Software Supply Chain
+- 📋 **T1036.003**: Rename Legitimate Utilities
+- 📋 **T1102.002**: Bidirectional Communication
+- 🎯 **T1667**: Email Bombing
+- 📋 **T1562.011**: Spoof Security Alerting
+- 📋 **T1573.002**: Asymmetric Cryptography
+- 📋 **T1567.002**: Exfiltration to Cloud Storage
+- 🎯 **T1570**: Lateral Tool Transfer
+- 📋 **T1614.001**: System Language Discovery
+- 🎯 **T1095**: Non-Application Layer Protocol
+- 📋 **T1027.003**: Steganography
+- 📋 **T1001.003**: Protocol or Service Impersonation
+- 🎯 **T1030**: Data Transfer Size Limits
+- 📋 **T1078.002**: Domain Accounts
+- 📋 **T1553.004**: Install Root Certificate
+- 🎯 **T1499**: Endpoint Denial of Service
+- 📋 **T1027.004**: Compile After Delivery
+- 🎯 **T1614**: System Location Discovery
+- 📋 **T1564.007**: VBA Stomping
+- 🎯 **T1656**: Impersonation
+- 📋 **T1090.004**: Domain Fronting
+- 📋 **T1557.002**: ARP Cache Poisoning
+- 📋 **T1518.001**: Security Software Discovery
+- 📋 **T1564.003**: Hidden Window
+- 📋 **T1070.010**: Relocate Malware
+- 🎯 **T1132**: Data Encoding
+- 🎯 **T1496**: Resource Hijacking
+- 📋 **T1565.002**: Transmitted Data Manipulation
+- 📋 **T1003.008**: /etc/passwd and /etc/shadow
+- 📋 **T1055.009**: Proc Memory
+- 🎯 **T1213**: Data from Information Repositories
+- 📋 **T1070.009**: Clear Persistence
+- 📋 **T1036.010**: Masquerade Account Name
+- 🎯 **T1200**: Hardware Additions
+- 📋 **T1219.002**: Remote Desktop Software
+- 🎯 **T1505**: Server Software Component
+- 🎯 **T1485**: Data Destruction
+- 📋 **T1132.002**: Non-Standard Encoding
+- 📋 **T1027.006**: HTML Smuggling
+- 📋 **T1027.010**: Command Obfuscation
+- 📋 **T1070.004**: File Deletion
+- 🎯 **T1189**: Drive-by Compromise
+- 🎯 **T1498**: Network Denial of Service
+- 📋 **T1546.016**: Installer Packages
+- 📋 **T1037.004**: RC Scripts
+- 🎯 **T1111**: Multi-Factor Authentication Interception
+- 📋 **T1027.002**: Software Packing
+- 📋 **T1071.001**: Web Protocols
+- 📋 **T1564.005**: Hidden File System
+- 📋 **T1543.002**: Systemd Service
+- 🎯 **T1668**: Exclusive Control
+- 🎯 **T1136**: Create Account
+- 📋 **T1547.013**: XDG Autostart Entries
+- 🎯 **T1672**: Email Spoofing
+- 🎯 **T1018**: Remote System Discovery
+- 🎯 **T1046**: Network Service Discovery
+- 🎯 **T1518**: Software Discovery
+- 🎯 **T1622**: Debugger Evasion
+- 📋 **T1036.006**: Space after Filename
+- 🎯 **T1052**: Exfiltration Over Physical Medium
+- 🎯 **T1105**: Ingress Tool Transfer
+- 📋 **T1055.008**: Ptrace System Calls
+- 🎯 **T1653**: Power Settings
+- 🎯 **T1665**: Hide Infrastructure
+- 📋 **T1564.001**: Hidden Files and Directories
+- 📋 **T1001.002**: Steganography
+- 📋 **T1480.001**: Environmental Keying
+- 🎯 **T1008**: Fallback Channels
+- 🎯 **T1124**: System Time Discovery
+- 🎯 **T1556**: Modify Authentication Process
+- 📋 **T1546.017**: Udev Rules
+- 📋 **T1056.004**: Credential API Hooking
+- 🎯 **T1495**: Firmware Corruption
+- 🎯 **T1490**: Inhibit System Recovery
+- 📋 **T1566.003**: Spearphishing via Service
+- 📋 **T1090.001**: Internal Proxy
+- 📋 **T1102.001**: Dead Drop Resolver
+- 📋 **T1001.001**: Junk Data
+- 🎯 **T1043**: Commonly Used Port
+- 📋 **T1505.001**: SQL Stored Procedures
+- 📋 **T1561.001**: Disk Content Wipe
+- 📋 **T1048.003**: Exfiltration Over Unencrypted Non-C2 Protocol
+- 📋 **T1027.015**: Compression
+- 📋 **T1078.003**: Local Accounts
+- 🎯 **T1669**: Wi-Fi Networks
+- 🎯 **T1211**: Exploitation for Defense Evasion
+- 🎯 **T1529**: System Shutdown/Reboot
+
+### Macos TODO (332 techniques)
+- 📋 **T1205.002**: Socket Filters
+- 📋 **T1560.001**: Archive via Utility
+- 📋 **T1021.005**: VNC
+- 🎯 **T1113**: Screen Capture
+- 🎯 **T1037**: Boot or Logon Initialization Scripts
+- 🎯 **T1557**: Adversary-in-the-Middle
+- 🎯 **T1033**: System Owner/User Discovery
+- 📋 **T1132.001**: Standard Encoding
+- 📋 **T1027.009**: Embedded Payloads
+- 📋 **T1556.003**: Pluggable Authentication Modules
+- 📋 **T1056.001**: Keylogging
+- 📋 **T1564.012**: File/Path Exclusions
+- 📋 **T1222.002**: Linux and Mac File and Directory Permissions Modification
+- 📋 **T1110.001**: Password Guessing
+- 🎯 **T1003**: OS Credential Dumping
+- 📋 **T1561.002**: Disk Structure Wipe
+- 📋 **T1498.001**: Direct Network Flood
+- 📋 **T1574.007**: Path Interception by PATH Environment Variable
+- 📋 **T1564.008**: Email Hiding Rules
+- 📋 **T1491.002**: External Defacement
+- 📋 **T1027.013**: Encrypted/Encoded File
+- 📋 **T1499.001**: OS Exhaustion Flood
+- 🎯 **T1014**: Rootkit
+- 🎯 **T1123**: Audio Capture
+- 🎯 **T1543**: Create or Modify System Process
+- 🎯 **T1133**: External Remote Services
+- 📋 **T1546.006**: LC_LOAD_DYLIB Addition
+- 🎯 **T1539**: Steal Web Session Cookie
+- 📋 **T1568.002**: Domain Generation Algorithms
+- 📋 **T1016.001**: Internet Connection Discovery
+- 📋 **T1548.003**: Sudo and Sudo Caching
+- 📋 **T1560.003**: Archive via Custom Method
+- 🎯 **T1069**: Permission Groups Discovery
+- 🎯 **T1114**: Email Collection
+- 📋 **T1499.003**: Application Exhaustion Flood
+- 📋 **T1195.001**: Compromise Software Dependencies and Development Tools
+- 🎯 **T1561**: Disk Wipe
+- 📋 **T1071.004**: DNS
+- 📋 **T1555.002**: Securityd Memory
+- 🎯 **T1025**: Data from Removable Media
+- 📋 **T1074.001**: Local Data Staging
+- 📋 **T1036.005**: Match Legitimate Resource Name or Location
+- 📋 **T1565.001**: Stored Data Manipulation
+- 📋 **T1110.002**: Password Cracking
+- 📋 **T1555.001**: Keychain
+- 📋 **T1036.008**: Masquerade File Type
+- 🎯 **T1489**: Service Stop
+- 🎯 **T1652**: Device Driver Discovery
+- 📋 **T1087.002**: Domain Account
+- 🎯 **T1564**: Hide Artifacts
+- 📋 **T1071.005**: Publish/Subscribe Protocols
+- 🎯 **T1080**: Taint Shared Content
+- 📋 **T1573.001**: Symmetric Cryptography
+- 📋 **T1087.001**: Local Account
+- 📋 **T1176.001**: Browser Extensions
+- 📋 **T1568.001**: Fast Flux DNS
+- 📋 **T1497.001**: System Checks
+- 📋 **T1053.003**: Cron
+- 📋 **T1069.002**: Domain Groups
+- 📋 **T1566.002**: Spearphishing Link
+- 📋 **T1070.002**: Clear Linux or Mac System Logs
+- 📋 **T1499.004**: Application or System Exploitation
+- 📋 **T1021.004**: SSH
+- 📋 **T1566.001**: Spearphishing Attachment
+- 📋 **T1027.008**: Stripped Payloads
+- 🎯 **T1119**: Automated Collection
+- 🎯 **T1115**: Clipboard Data
+- 📋 **T1555.005**: Password Managers
+- 📋 **T1553.001**: Gatekeeper Bypass
+- 🎯 **T1007**: System Service Discovery
+- 🎯 **T1040**: Network Sniffing
+- 📋 **T1553.002**: Code Signing
+- 📋 **T1565.003**: Runtime Data Manipulation
+- 🎯 **T1135**: Network Share Discovery
+- 🎯 **T1120**: Peripheral Device Discovery
+- 📋 **T1036.009**: Break Process Trees
+- 🎯 **T1082**: System Information Discovery
+- 🎯 **T1071**: Application Layer Protocol
+- 📋 **T1074.002**: Remote Data Staging
+- 📋 **T1498.002**: Reflection Amplification
+- 📋 **T1059.002**: AppleScript
+- 🎯 **T1176**: Software Extensions
+- 📋 **T1499.002**: Service Exhaustion Flood
+- 📋 **T1195.003**: Compromise Hardware Supply Chain
+- 📋 **T1558.005**: Ccache Files
+- 📋 **T1070.007**: Clear Network Connection History and Configurations
+- 📋 **T1070.003**: Clear Command History
+- 🎯 **T1005**: Data from Local System
+- 🎯 **T1140**: Deobfuscate/Decode Files or Information
+- 🎯 **T1562**: Impair Defenses
+- 📋 **T1098.007**: Additional Local or Domain Groups
+- 🎯 **T1195**: Supply Chain Compromise
+- 🎯 **T1190**: Exploit Public-Facing Application
+- 🎯 **T1558**: Steal or Forge Kerberos Tickets
+- 🎯 **T1555**: Credentials from Password Stores
+- 🎯 **T1567**: Exfiltration Over Web Service
+- 🎯 **T1219**: Remote Access Tools
+- 📋 **T1560.002**: Archive via Library
+- 🎯 **T1036**: Masquerading
+- 📋 **T1070.008**: Clear Mailbox Data
+- 📋 **T1037.002**: Login Hook
+- 🎯 **T1659**: Content Injection
+- 📋 **T1567.004**: Exfiltration Over Webhook
+- 🎯 **T1205**: Traffic Signaling
+- 🎯 **T1218**: System Binary Proxy Execution
+- 🎯 **T1153**: Source
+- 📋 **T1070.006**: Timestomp
+- 🎯 **T1620**: Reflective Code Loading
+- 📋 **T1016.002**: Wi-Fi Discovery
+- 📋 **T1480.002**: Mutual Exclusion
+- 📋 **T1564.011**: Ignore Process Interrupts
+- 🎯 **T1010**: Application Window Discovery
+- 📋 **T1497.003**: Time Based Evasion
+- 📋 **T1563.001**: SSH Hijacking
+- 🎯 **T1029**: Scheduled Transfer
+- 🎯 **T1572**: Protocol Tunneling
+- 🎯 **T1011**: Exfiltration Over Other Network Medium
+- 📋 **T1562.004**: Disable or Modify System Firewall
+- 🎯 **T1560**: Archive Collected Data
+- 🎯 **T1021**: Remote Services
+- 📋 **T1071.003**: Mail Protocols
+- 📋 **T1218.015**: Electron Applications
+- 📋 **T1553.006**: Code Signing Policy Modification
+- 📋 **T1543.004**: Launch Daemon
+- 📋 **T1555.003**: Credentials from Web Browsers
+- 🎯 **T1491**: Defacement
+- 📋 **T1557.003**: DHCP Spoofing
+- 🎯 **T1563**: Remote Service Session Hijacking
+- 📋 **T1027.001**: Binary Padding
+- 📋 **T1505.003**: Web Shell
+- 🎯 **T1217**: Browser Information Discovery
+- 📋 **T1552.004**: Private Keys
+- 📋 **T1011.001**: Exfiltration Over Bluetooth
+- 📋 **T1078.001**: Default Accounts
+- 📋 **T1546.005**: Trap
+- 📋 **T1574.006**: Dynamic Linker Hijacking
+- 📋 **T1136.001**: Local Account
+- 🎯 **T1092**: Communication Through Removable Media
+- 🎯 **T1222**: File and Directory Permissions Modification
+- 📋 **T1176.002**: IDE Extensions
+- 📋 **T1027.016**: Junk Code Insertion
+- 🎯 **T1548**: Abuse Elevation Control Mechanism
+- 📋 **T1548.001**: Setuid and Setgid
+- 📋 **T1110.003**: Password Spraying
+- 📋 **T1090.002**: External Proxy
+- 📋 **T1056.003**: Web Portal Capture
+- 🎯 **T1108**: Redundant Access
+- 📋 **T1098.004**: SSH Authorized Keys
+- 🎯 **T1673**: Virtual Machine Discovery
+- 🎯 **T1125**: Video Capture
+- 🎯 **T1016**: System Network Configuration Discovery
+- 📋 **T1496.002**: Bandwidth Hijacking
+- 🎯 **T1087**: Account Discovery
+- 🎯 **T1090**: Proxy
+- 📋 **T1562.006**: Indicator Blocking
+- 📋 **T1136.002**: Domain Account
+- 📋 **T1564.014**: Extended Attributes
+- 🎯 **T1020**: Automated Exfiltration
+- 📋 **T1219.001**: IDE Tunneling
+- 📋 **T1036.002**: Right-to-Left Override
+- 📋 **T1027.017**: SVG Smuggling
+- 📋 **T1542.002**: Component Firmware
+- 🎯 **T1070**: Indicator Removal
+- 📋 **T1048.001**: Exfiltration Over Symmetric Encrypted Non-C2 Protocol
+- 🎯 **T1083**: File and Directory Discovery
+- 🎯 **T1568**: Dynamic Resolution
+- 📋 **T1036.004**: Masquerade Task or Service
+- 🎯 **T1647**: Plist File Modification
+- 📋 **T1114.003**: Email Forwarding Rule
+- 🎯 **T1074**: Data Staged
+- 🎯 **T1649**: Steal or Forge Authentication Certificates
+- 🎯 **T1049**: System Network Connections Discovery
+- 🎯 **T1542**: Pre-OS Boot
+- 📋 **T1569.001**: Launchctl
+- 📋 **T1552.003**: Bash History
+- 📋 **T1562.010**: Downgrade Attack
+- 📋 **T1559.003**: XPC Services
+- 🎯 **T1497**: Virtualization/Sandbox Evasion
+- 🎯 **T1102**: Web Service
+- 📋 **T1552.001**: Credentials In Files
+- 📋 **T1568.003**: DNS Calculation
+- 📋 **T1547.015**: Login Items
+- 🎯 **T1104**: Multi-Stage Channels
+- 🎯 **T1657**: Financial Theft
+- 🎯 **T1480**: Execution Guardrails
+- 📋 **T1606.001**: Web Cookies
+- 🎯 **T1654**: Log Enumeration
+- 📋 **T1567.001**: Exfiltration to Code Repository
+- 📋 **T1205.001**: Port Knocking
+- 📋 **T1491.001**: Internal Defacement
+- 📋 **T1564.002**: Hidden Users
+- 📋 **T1048.002**: Exfiltration Over Asymmetric Encrypted Non-C2 Protocol
+- 🎯 **T1057**: Process Discovery
+- 📋 **T1562.003**: Impair Command History Logging
+- 📋 **T1053.004**: Launchd
+- 📋 **T1497.002**: User Activity Based Checks
+- 🎯 **T1041**: Exfiltration Over C2 Channel
+- 🎯 **T1606**: Forge Web Credentials
+- 🎯 **T1621**: Multi-Factor Authentication Request Generation
+- 🎯 **T1554**: Compromise Host Software Binary
+- 🎯 **T1026**: Multiband Communication
+- 📋 **T1071.002**: File Transfer Protocols
+- 🎯 **T1212**: Exploitation for Credential Access
+- 📋 **T1546.014**: Emond
+- 📋 **T1102.003**: One-Way Communication
+- 🎯 **T1210**: Exploitation of Remote Services
+- 🎯 **T1534**: Internal Spearphishing
+- 🎯 **T1199**: Trusted Relationship
+- 📋 **T1069.001**: Local Groups
+- 🎯 **T1149**: LC_MAIN Hijacking
+- 🎯 **T1098**: Account Manipulation
+- 🎯 **T1048**: Exfiltration Over Alternative Protocol
+- 📋 **T1547.006**: Kernel Modules and Extensions
+- 📋 **T1056.002**: GUI Input Capture
+- 📋 **T1052.001**: Exfiltration over USB
+- 🎯 **T1566**: Phishing
+- 📋 **T1496.001**: Compute Hijacking
+- 📋 **T1090.003**: Multi-hop Proxy
+- 🎯 **T1110**: Brute Force
+- 📋 **T1059.004**: Unix Shell
+- 📋 **T1219.003**: Remote Access Hardware
+- 📋 **T1562.001**: Disable or Modify Tools
+- 🎯 **T1565**: Data Manipulation
+- 🎯 **T1001**: Data Obfuscation
+- 🎯 **T1039**: Data from Network Shared Drive
+- 📋 **T1027.005**: Indicator Removal from Tools
+- 🎯 **T1078**: Valid Accounts
+- 🎯 **T1571**: Non-Standard Port
+- 🎯 **T1068**: Exploitation for Privilege Escalation
+- 📋 **T1564.009**: Resource Forking
+- 🎯 **T1531**: Account Access Removal
+- 📋 **T1110.004**: Credential Stuffing
+- 🎯 **T1027**: Obfuscated Files or Information
+- 📋 **T1556.006**: Multi-Factor Authentication
+- 📋 **T1036.001**: Invalid Code Signature
+- 📋 **T1564.006**: Run Virtual Instance
+- 📋 **T1027.014**: Polymorphic Code
+- 🎯 **T1201**: Password Policy Discovery
+- 🎯 **T1546**: Event Triggered Execution
+- 📋 **T1546.004**: Unix Shell Configuration Modification
+- 🎯 **T1486**: Data Encrypted for Impact
+- 🎯 **T1553**: Subvert Trust Controls
+- 📋 **T1548.004**: Elevated Execution with Prompt
+- 🎯 **T1573**: Encrypted Channel
+- 📋 **T1567.003**: Exfiltration to Text Storage Sites
+- 🎯 **T1056**: Input Capture
+- 📋 **T1566.004**: Spearphishing Voice
+- 📋 **T1195.002**: Compromise Software Supply Chain
+- 📋 **T1036.003**: Rename Legitimate Utilities
+- 📋 **T1102.002**: Bidirectional Communication
+- 🎯 **T1667**: Email Bombing
+- 📋 **T1562.011**: Spoof Security Alerting
+- 📋 **T1573.002**: Asymmetric Cryptography
+- 📋 **T1567.002**: Exfiltration to Cloud Storage
+- 🎯 **T1570**: Lateral Tool Transfer
+- 📋 **T1037.005**: Startup Items
+- 📋 **T1614.001**: System Language Discovery
+- 🎯 **T1095**: Non-Application Layer Protocol
+- 📋 **T1027.003**: Steganography
+- 📋 **T1001.003**: Protocol or Service Impersonation
+- 🎯 **T1030**: Data Transfer Size Limits
+- 📋 **T1078.002**: Domain Accounts
+- 📋 **T1553.004**: Install Root Certificate
+- 🎯 **T1499**: Endpoint Denial of Service
+- 📋 **T1027.004**: Compile After Delivery
+- 🎯 **T1614**: System Location Discovery
+- 📋 **T1564.007**: VBA Stomping
+- 🎯 **T1656**: Impersonation
+- 📋 **T1090.004**: Domain Fronting
+- 📋 **T1557.002**: ARP Cache Poisoning
+- 📋 **T1518.001**: Security Software Discovery
+- 📋 **T1564.003**: Hidden Window
+- 📋 **T1070.010**: Relocate Malware
+- 🎯 **T1132**: Data Encoding
+- 🎯 **T1496**: Resource Hijacking
+- 📋 **T1565.002**: Transmitted Data Manipulation
+- 📋 **T1543.001**: Launch Agent
+- 🎯 **T1213**: Data from Information Repositories
+- 📋 **T1070.009**: Clear Persistence
+- 📋 **T1036.010**: Masquerade Account Name
+- 🎯 **T1200**: Hardware Additions
+- 📋 **T1219.002**: Remote Desktop Software
+- 🎯 **T1505**: Server Software Component
+- 🎯 **T1485**: Data Destruction
+- 📋 **T1132.002**: Non-Standard Encoding
+- 📋 **T1027.006**: HTML Smuggling
+- 📋 **T1027.010**: Command Obfuscation
+- 📋 **T1070.004**: File Deletion
+- 🎯 **T1189**: Drive-by Compromise
+- 🎯 **T1498**: Network Denial of Service
+- 📋 **T1546.016**: Installer Packages
+- 📋 **T1037.004**: RC Scripts
+- 🎯 **T1111**: Multi-Factor Authentication Interception
+- 📋 **T1027.002**: Software Packing
+- 📋 **T1071.001**: Web Protocols
+- 📋 **T1564.005**: Hidden File System
+- 🎯 **T1668**: Exclusive Control
+- 🎯 **T1136**: Create Account
+- 🎯 **T1672**: Email Spoofing
+- 🎯 **T1018**: Remote System Discovery
+- 🎯 **T1046**: Network Service Discovery
+- 🎯 **T1518**: Software Discovery
+- 🎯 **T1622**: Debugger Evasion
+- 📋 **T1036.006**: Space after Filename
+- 📋 **T1547.007**: Re-opened Applications
+- 🎯 **T1052**: Exfiltration Over Physical Medium
+- 🎯 **T1105**: Ingress Tool Transfer
+- 📋 **T1548.006**: TCC Manipulation
+- 🎯 **T1653**: Power Settings
+- 🎯 **T1665**: Hide Infrastructure
+- 📋 **T1564.001**: Hidden Files and Directories
+- 📋 **T1001.002**: Steganography
+- 📋 **T1480.001**: Environmental Keying
+- 🎯 **T1008**: Fallback Channels
+- 🎯 **T1124**: System Time Discovery
+- 🎯 **T1556**: Modify Authentication Process
+- 📋 **T1056.004**: Credential API Hooking
+- 🎯 **T1495**: Firmware Corruption
+- 🎯 **T1490**: Inhibit System Recovery
+- 📋 **T1566.003**: Spearphishing via Service
+- 📋 **T1090.001**: Internal Proxy
+- 📋 **T1102.001**: Dead Drop Resolver
+- 📋 **T1001.001**: Junk Data
+- 🎯 **T1043**: Commonly Used Port
+- 📋 **T1561.001**: Disk Content Wipe
+- 📋 **T1048.003**: Exfiltration Over Unencrypted Non-C2 Protocol
+- 📋 **T1027.015**: Compression
+- 📋 **T1574.004**: Dylib Hijacking
+- 📋 **T1078.003**: Local Accounts
+- 🎯 **T1669**: Wi-Fi Networks
+- 🎯 **T1211**: Exploitation for Defense Evasion
+- 🎯 **T1529**: System Shutdown/Reboot
+
+### Pre TODO (91 techniques)
+- 🎯 **T1583**: Acquire Infrastructure
+- 📋 **T1583.007**: Serverless
+- 🎯 **T1592**: Gather Victim Host Information
+- 📋 **T1596.003**: Digital Certificates
+- 📋 **T1597.002**: Purchase Technical Data
+- 📋 **T1588.007**: Artificial Intelligence
+- 📋 **T1590.005**: IP Addresses
+- 📋 **T1590.002**: DNS
+- 📋 **T1584.008**: Network Devices
+- 📋 **T1583.008**: Malvertising
+- 📋 **T1596.002**: WHOIS
+- 🎯 **T1594**: Search Victim-Owned Websites
+- 📋 **T1596.001**: DNS/Passive DNS
+- 📋 **T1588.004**: Digital Certificates
+- 📋 **T1583.002**: DNS Server
+- 📋 **T1587.003**: Digital Certificates
+- 📋 **T1587.001**: Malware
+- 📋 **T1591.003**: Identify Business Tempo
+- 📋 **T1592.001**: Hardware
+- 📋 **T1586.001**: Social Media Accounts
+- 📋 **T1588.006**: Vulnerabilities
+- 📋 **T1598.003**: Spearphishing Link
+- 📋 **T1583.005**: Botnet
+- 📋 **T1608.004**: Drive-by Target
+- 📋 **T1590.004**: Network Topology
+- 📋 **T1587.002**: Code Signing Certificates
+- 📋 **T1590.003**: Network Trust Dependencies
+- 📋 **T1584.003**: Virtual Private Server
+- 📋 **T1586.003**: Cloud Accounts
+- 📋 **T1586.002**: Email Accounts
+- 📋 **T1608.001**: Upload Malware
+- 📋 **T1583.001**: Domains
+- 📋 **T1608.002**: Upload Tool
+- 📋 **T1597.001**: Threat Intel Vendors
+- 🎯 **T1589**: Gather Victim Identity Information
+- 📋 **T1595.002**: Vulnerability Scanning
+- 🎯 **T1596**: Search Open Technical Databases
+- 📋 **T1583.004**: Server
+- 📋 **T1585.002**: Email Accounts
+- 🎯 **T1595**: Active Scanning
+- 📋 **T1589.002**: Email Addresses
+- 📋 **T1598.004**: Spearphishing Voice
+- 📋 **T1590.006**: Network Security Appliances
+- 📋 **T1593.002**: Search Engines
+- 📋 **T1591.002**: Business Relationships
+- 📋 **T1593.003**: Code Repositories
+- 📋 **T1589.003**: Employee Names
+- 📋 **T1592.004**: Client Configurations
+- 📋 **T1588.001**: Malware
+- 📋 **T1583.003**: Virtual Private Server
+- 🎯 **T1584**: Compromise Infrastructure
+- 🎯 **T1586**: Compromise Accounts
+- 📋 **T1584.005**: Botnet
+- 🎯 **T1608**: Stage Capabilities
+- 📋 **T1608.005**: Link Target
+- 📋 **T1583.006**: Web Services
+- 📋 **T1598.002**: Spearphishing Attachment
+- 📋 **T1596.004**: CDNs
+- 📋 **T1585.003**: Cloud Accounts
+- 🎯 **T1591**: Gather Victim Org Information
+- 🎯 **T1590**: Gather Victim Network Information
+- 🎯 **T1593**: Search Open Websites/Domains
+- 📋 **T1588.002**: Tool
+- 🎯 **T1597**: Search Closed Sources
+- 📋 **T1584.006**: Web Services
+- 📋 **T1585.001**: Social Media Accounts
+- 📋 **T1592.003**: Firmware
+- 📋 **T1592.002**: Software
+- 📋 **T1587.004**: Exploits
+- 📋 **T1593.001**: Social Media
+- 📋 **T1589.001**: Credentials
+- 📋 **T1595.003**: Wordlist Scanning
+- 📋 **T1608.003**: Install Digital Certificate
+- 📋 **T1584.002**: DNS Server
+- 📋 **T1591.004**: Identify Roles
+- 🎯 **T1598**: Phishing for Information
+- 🎯 **T1585**: Establish Accounts
+- 🎯 **T1588**: Obtain Capabilities
+- 🎯 **T1650**: Acquire Access
+- 📋 **T1595.001**: Scanning IP Blocks
+- 📋 **T1584.007**: Serverless
+- 📋 **T1584.004**: Server
+- 📋 **T1590.001**: Domain Properties
+- 📋 **T1608.006**: SEO Poisoning
+- 📋 **T1588.003**: Code Signing Certificates
+- 📋 **T1596.005**: Scan Databases
+- 📋 **T1591.001**: Determine Physical Locations
+- 🎯 **T1587**: Develop Capabilities
+- 📋 **T1588.005**: Exploits
+- 📋 **T1598.001**: Spearphishing Service
+- 📋 **T1584.001**: Domains
+
+### Containers TODO (44 techniques)
+- 🎯 **T1613**: Container and Resource Discovery
+- 📋 **T1110.001**: Password Guessing
+- 🎯 **T1543**: Create or Modify System Process
+- 🎯 **T1133**: External Remote Services
+- 📋 **T1053.007**: Container Orchestration Job
+- 🎯 **T1069**: Permission Groups Discovery
+- 📋 **T1036.005**: Match Legitimate Resource Name or Location
+- 📋 **T1098.006**: Additional Container Cluster Roles
+- 🎯 **T1562**: Impair Defenses
+- 🎯 **T1190**: Exploit Public-Facing Application
+- 🎯 **T1036**: Masquerading
+- 🎯 **T1611**: Escape to Host
+- 🎯 **T1525**: Implant Internal Image
+- 🎯 **T1550**: Use Alternate Authentication Material
+- 🎯 **T1610**: Deploy Container
+- 📋 **T1078.001**: Default Accounts
+- 📋 **T1136.001**: Local Account
+- 📋 **T1110.003**: Password Spraying
+- 📋 **T1496.002**: Bandwidth Hijacking
+- 🎯 **T1070**: Indicator Removal
+- 🎯 **T1609**: Container Administration Command
+- 🎯 **T1612**: Build Image on Host
+- 📋 **T1552.001**: Credentials In Files
+- 🎯 **T1528**: Steal Application Access Token
+- 🎯 **T1098**: Account Manipulation
+- 📋 **T1496.001**: Compute Hijacking
+- 🎯 **T1110**: Brute Force
+- 📋 **T1562.001**: Disable or Modify Tools
+- 📋 **T1204.003**: Malicious Image
+- 📋 **T1543.005**: Container Service
+- 🎯 **T1078**: Valid Accounts
+- 🎯 **T1068**: Exploitation for Privilege Escalation
+- 📋 **T1110.004**: Credential Stuffing
+- 🎯 **T1499**: Endpoint Denial of Service
+- 🎯 **T1496**: Resource Hijacking
+- 📋 **T1036.010**: Masquerade Account Name
+- 🎯 **T1485**: Data Destruction
+- 🎯 **T1498**: Network Denial of Service
+- 🎯 **T1136**: Create Account
+- 🎯 **T1046**: Network Service Discovery
+- 📋 **T1550.001**: Application Access Token
+- 🎯 **T1490**: Inhibit System Recovery
+- 📋 **T1552.007**: Container API
+- 📋 **T1078.003**: Local Accounts
+
+### Iaas TODO (99 techniques)
+- 📋 **T1578.004**: Revert Cloud Instance
+- 📋 **T1110.001**: Password Guessing
+- 📋 **T1498.001**: Direct Network Flood
+- 🎯 **T1666**: Modify Cloud Resource Hierarchy
+- 📋 **T1491.002**: External Defacement
+- 📋 **T1485.001**: Lifecycle-Triggered Deletion
+- 🎯 **T1578**: Modify Cloud Compute Infrastructure
+- 🎯 **T1069**: Permission Groups Discovery
+- 📋 **T1069.003**: Cloud Groups
+- 📋 **T1499.003**: Application Exhaustion Flood
+- 📋 **T1552.005**: Cloud Instance Metadata API
+- 📋 **T1606.002**: SAML Tokens
+- 📋 **T1499.004**: Application or System Exploitation
+- 📋 **T1098.003**: Additional Cloud Roles
+- 🎯 **T1119**: Automated Collection
+- 🎯 **T1040**: Network Sniffing
+- 🎯 **T1530**: Data from Cloud Storage
+- 🎯 **T1082**: System Information Discovery
+- 📋 **T1074.002**: Remote Data Staging
+- 📋 **T1498.002**: Reflection Amplification
+- 📋 **T1499.002**: Service Exhaustion Flood
+- 🎯 **T1562**: Impair Defenses
+- 🎯 **T1190**: Exploit Public-Facing Application
+- 🎯 **T1555**: Credentials from Password Stores
+- 📋 **T1021.008**: Direct Cloud VM Connections
+- 🎯 **T1525**: Implant Internal Image
+- 🎯 **T1550**: Use Alternate Authentication Material
+- 🎯 **T1021**: Remote Services
+- 📋 **T1556.007**: Hybrid Identity
+- 📋 **T1059.009**: Cloud API
+- 🎯 **T1580**: Cloud Infrastructure Discovery
+- 🎯 **T1491**: Defacement
+- 🎯 **T1535**: Unused/Unsupported Cloud Regions
+- 📋 **T1078.001**: Default Accounts
+- 🎯 **T1548**: Abuse Elevation Control Mechanism
+- 📋 **T1110.003**: Password Spraying
+- 🎯 **T1108**: Redundant Access
+- 📋 **T1098.004**: SSH Authorized Keys
+- 📋 **T1548.005**: Temporary Elevated Cloud Access
+- 📋 **T1578.003**: Delete Cloud Instance
+- 📋 **T1496.002**: Bandwidth Hijacking
+- 🎯 **T1087**: Account Discovery
+- 📋 **T1562.007**: Disable or Modify Cloud Firewall
+- 📋 **T1020.001**: Traffic Duplication
+- 🎯 **T1074**: Data Staged
+- 🎯 **T1049**: System Network Connections Discovery
+- 📋 **T1552.001**: Credentials In Files
+- 🎯 **T1619**: Cloud Storage Object Discovery
+- 📋 **T1606.001**: Web Cookies
+- 🎯 **T1654**: Log Enumeration
+- 📋 **T1021.007**: Cloud Services
+- 🎯 **T1528**: Steal Application Access Token
+- 📋 **T1098.001**: Additional Cloud Credentials
+- 📋 **T1087.004**: Cloud Account
+- 🎯 **T1606**: Forge Web Credentials
+- 🎯 **T1621**: Multi-Factor Authentication Request Generation
+- 🎯 **T1199**: Trusted Relationship
+- 📋 **T1136.003**: Cloud Account
+- 🎯 **T1098**: Account Manipulation
+- 🎯 **T1048**: Exfiltration Over Alternative Protocol
+- 📋 **T1496.001**: Compute Hijacking
+- 🎯 **T1110**: Brute Force
+- 📋 **T1562.001**: Disable or Modify Tools
+- 📋 **T1204.003**: Malicious Image
+- 🎯 **T1078**: Valid Accounts
+- 🎯 **T1531**: Account Access Removal
+- 📋 **T1110.004**: Credential Stuffing
+- 📋 **T1556.006**: Multi-Factor Authentication
+- 🎯 **T1201**: Password Policy Discovery
+- 🎯 **T1546**: Event Triggered Execution
+- 🎯 **T1486**: Data Encrypted for Impact
+- 📋 **T1550.004**: Web Session Cookie
+- 🎯 **T1499**: Endpoint Denial of Service
+- 🎯 **T1614**: System Location Discovery
+- 📋 **T1578.005**: Modify Cloud Compute Configurations
+- 📋 **T1562.008**: Disable or Modify Cloud Logs
+- 📋 **T1518.001**: Security Software Discovery
+- 🎯 **T1496**: Resource Hijacking
+- 📋 **T1556.009**: Conditional Access Policies
+- 📋 **T1578.002**: Create Cloud Instance
+- 📋 **T1555.006**: Cloud Secrets Management Stores
+- 🎯 **T1213**: Data from Information Repositories
+- 📋 **T1036.010**: Masquerade Account Name
+- 🎯 **T1485**: Data Destruction
+- 🎯 **T1537**: Transfer Data to Cloud Account
+- 🎯 **T1498**: Network Denial of Service
+- 🎯 **T1651**: Cloud Administration Command
+- 🎯 **T1136**: Create Account
+- 🎯 **T1526**: Cloud Service Discovery
+- 🎯 **T1046**: Network Service Discovery
+- 🎯 **T1518**: Software Discovery
+- 🎯 **T1538**: Cloud Service Dashboard
+- 🎯 **T1648**: Serverless Execution
+- 📋 **T1578.001**: Create Snapshot
+- 📋 **T1550.001**: Application Access Token
+- 📋 **T1078.004**: Cloud Accounts
+- 🎯 **T1556**: Modify Authentication Process
+- 🎯 **T1490**: Inhibit System Recovery
+- 🎯 **T1211**: Exploitation for Defense Evasion
+
+### Saas TODO (63 techniques)
+- 📋 **T1110.001**: Password Guessing
+- 🎯 **T1539**: Steal Web Session Cookie
+- 📋 **T1496.003**: SMS Pumping
+- 🎯 **T1069**: Permission Groups Discovery
+- 📋 **T1069.003**: Cloud Groups
+- 📋 **T1606.002**: SAML Tokens
+- 🎯 **T1080**: Taint Shared Content
+- 📋 **T1566.002**: Spearphishing Link
+- 📋 **T1098.003**: Additional Cloud Roles
+- 🎯 **T1119**: Automated Collection
+- 🎯 **T1530**: Data from Cloud Storage
+- 🎯 **T1567**: Exfiltration Over Web Service
+- 📋 **T1567.004**: Exfiltration Over Webhook
+- 🎯 **T1550**: Use Alternate Authentication Material
+- 📋 **T1556.007**: Hybrid Identity
+- 📋 **T1059.009**: Cloud API
+- 📋 **T1078.001**: Default Accounts
+- 📋 **T1110.003**: Password Spraying
+- 🎯 **T1108**: Redundant Access
+- 🎯 **T1087**: Account Discovery
+- 📋 **T1213.001**: Confluence
+- 🎯 **T1657**: Financial Theft
+- 📋 **T1606.001**: Web Cookies
+- 📋 **T1021.007**: Cloud Services
+- 🎯 **T1528**: Steal Application Access Token
+- 📋 **T1098.001**: Additional Cloud Credentials
+- 📋 **T1087.004**: Cloud Account
+- 📋 **T1496.004**: Cloud Service Hijacking
+- 🎯 **T1606**: Forge Web Credentials
+- 🎯 **T1621**: Multi-Factor Authentication Request Generation
+- 📋 **T1552.008**: Chat Messages
+- 🎯 **T1534**: Internal Spearphishing
+- 🎯 **T1199**: Trusted Relationship
+- 📋 **T1136.003**: Cloud Account
+- 🎯 **T1098**: Account Manipulation
+- 🎯 **T1048**: Exfiltration Over Alternative Protocol
+- 🎯 **T1566**: Phishing
+- 🎯 **T1110**: Brute Force
+- 🎯 **T1078**: Valid Accounts
+- 🎯 **T1531**: Account Access Removal
+- 📋 **T1110.004**: Credential Stuffing
+- 📋 **T1556.006**: Multi-Factor Authentication
+- 🎯 **T1201**: Password Policy Discovery
+- 🎯 **T1546**: Event Triggered Execution
+- 📋 **T1213.004**: Customer Relationship Management Software
+- 🎯 **T1671**: Cloud Application Integration
+- 📋 **T1550.004**: Web Session Cookie
+- 🎯 **T1656**: Impersonation
+- 📋 **T1562.008**: Disable or Modify Cloud Logs
+- 🎯 **T1496**: Resource Hijacking
+- 📋 **T1213.003**: Code Repositories
+- 🎯 **T1213**: Data from Information Repositories
+- 📋 **T1036.010**: Masquerade Account Name
+- 🎯 **T1537**: Transfer Data to Cloud Account
+- 🎯 **T1136**: Create Account
+- 🎯 **T1526**: Cloud Service Discovery
+- 🎯 **T1538**: Cloud Service Dashboard
+- 🎯 **T1648**: Serverless Execution
+- 📋 **T1550.001**: Application Access Token
+- 📋 **T1078.004**: Cloud Accounts
+- 🎯 **T1556**: Modify Authentication Process
+- 📋 **T1213.005**: Messaging Applications
+- 🎯 **T1211**: Exploitation for Defense Evasion
+
+### Network_Devices TODO (16 techniques)
+- 🎯 **T1602**: Data from Configuration Repository
+- 🎯 **T1600**: Weaken Encryption
+- 📋 **T1542.005**: TFTP Boot
+- 📋 **T1600.001**: Reduce Key Space
+- 📋 **T1557.004**: Evil Twin
+- 📋 **T1599.001**: Network Address Translation Traversal
+- 📋 **T1602.002**: Network Device Configuration Dump
+- 📋 **T1600.002**: Disable Crypto Hardware
+- 📋 **T1059.008**: Network Device CLI
+- 📋 **T1542.004**: ROMMONkit
+- 🎯 **T1601**: Modify System Image
+- 🎯 **T1599**: Network Boundary Bridging
+- 📋 **T1601.001**: Patch System Image
+- 📋 **T1602.001**: SNMP (MIB Dump)
+- 📋 **T1556.004**: Network Device Authentication
+- 📋 **T1601.002**: Downgrade System Image
+
+### Esxi TODO (3 techniques)
+- 🎯 **T1675**: ESXi Administration Command
+- 📋 **T1059.012**: Hypervisor CLI
+- 📋 **T1505.006**: vSphere Installation Bundles
+

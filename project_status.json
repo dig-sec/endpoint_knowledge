@@ -4,43 +4,981 @@
       "id": "T1059",
       "platform": "Windows",
       "status": "complete",
-      "files": ["description.md", "code_samples/", "detection.md", "mitigation.md", "purple_playbook.md", "references.md", "agent_notes.md"]
+      "files": [
+        "description.md",
+        "code_samples/",
+        "detection.md",
+        "mitigation.md",
+        "purple_playbook.md",
+        "references.md",
+        "agent_notes.md"
+      ]
     },
     {
       "id": "T1055",
       "platform": "Windows",
       "status": "complete",
-      "files": ["description.md", "code_samples/", "detection.md", "mitigation.md", "purple_playbook.md", "references.md", "agent_notes.md"]
+      "files": [
+        "description.md",
+        "code_samples/",
+        "detection.md",
+        "mitigation.md",
+        "purple_playbook.md",
+        "references.md",
+        "agent_notes.md"
+      ]
     },
     {
       "id": "T1547",
       "platform": "Windows",
       "status": "complete",
-      "files": ["description.md", "code_samples/", "detection.md", "mitigation.md", "purple_playbook.md", "references.md", "agent_notes.md"]
+      "files": [
+        "description.md",
+        "code_samples/",
+        "detection.md",
+        "mitigation.md",
+        "purple_playbook.md",
+        "references.md",
+        "agent_notes.md"
+      ]
     },
     {
       "id": "T1038",
       "platform": "Windows",
       "status": "complete",
-      "files": ["description.md", "code_samples/", "detection.md", "mitigation.md", "purple_playbook.md", "references.md", "agent_notes.md"]
+      "files": [
+        "description.md",
+        "code_samples/",
+        "detection.md",
+        "mitigation.md",
+        "purple_playbook.md",
+        "references.md",
+        "agent_notes.md"
+      ]
     },
     {
       "id": "T1552",
       "platform": "Linux",
       "status": "complete",
-      "files": ["description.md", "code_samples/", "detection.md", "mitigation.md", "purple_playbook.md", "references.md", "agent_notes.md"]
+      "files": [
+        "description.md",
+        "code_samples/",
+        "detection.md",
+        "mitigation.md",
+        "purple_playbook.md",
+        "references.md",
+        "agent_notes.md"
+      ]
     },
     {
       "id": "T1053",
       "platform": "Linux",
       "status": "complete",
-      "files": ["description.md", "code_samples/", "detection.md", "mitigation.md", "purple_playbook.md", "references.md", "agent_notes.md"]
+      "files": [
+        "description.md",
+        "code_samples/",
+        "detection.md",
+        "mitigation.md",
+        "purple_playbook.md",
+        "references.md",
+        "agent_notes.md"
+      ]
     },
     {
       "id": "T1574",
       "platform": "Linux",
       "status": "complete",
-      "files": ["description.md", "code_samples/", "detection.md", "mitigation.md", "purple_playbook.md", "references.md", "agent_notes.md"]
+      "files": [
+        "description.md",
+        "code_samples/",
+        "detection.md",
+        "mitigation.md",
+        "purple_playbook.md",
+        "references.md",
+        "agent_notes.md"
+      ]
+    },
+    {
+      "id": "T1053.005",
+      "platform": "Windows",
+      "status": "template_created",
+      "files": [
+        "description.md",
+        "code_samples/",
+        "detection.md",
+        "mitigation.md",
+        "purple_playbook.md",
+        "references.md",
+        "agent_notes.md"
+      ]
+    },
+    {
+      "id": "T1047",
+      "platform": "Windows",
+      "status": "template_created",
+      "files": [
+        "description.md",
+        "code_samples/",
+        "detection.md",
+        "mitigation.md",
+        "purple_playbook.md",
+        "references.md",
+        "agent_notes.md"
+      ]
+    },
+    {
+      "id": "T1129",
+      "platform": "Windows",
+      "status": "template_created",
+      "files": [
+        "description.md",
+        "code_samples/",
+        "detection.md",
+        "mitigation.md",
+        "purple_playbook.md",
+        "references.md",
+        "agent_notes.md"
+      ]
+    },
+    {
+      "id": "T1129",
+      "platform": "Macos",
+      "status": "template_created",
+      "files": [
+        "description.md",
+        "code_samples/",
+        "detection.md",
+        "mitigation.md",
+        "purple_playbook.md",
+        "references.md",
+        "agent_notes.md"
+      ]
+    },
+    {
+      "id": "T1129",
+      "platform": "Linux",
+      "status": "template_created",
+      "files": [
+        "description.md",
+        "code_samples/",
+        "detection.md",
+        "mitigation.md",
+        "purple_playbook.md",
+        "references.md",
+        "agent_notes.md"
+      ]
+    },
+    {
+      "id": "T1059.007",
+      "platform": "Windows",
+      "status": "template_created",
+      "files": [
+        "description.md",
+        "code_samples/",
+        "detection.md",
+        "mitigation.md",
+        "purple_playbook.md",
+        "references.md",
+        "agent_notes.md"
+      ]
+    },
+    {
+      "id": "T1059.007",
+      "platform": "Macos",
+      "status": "template_created",
+      "files": [
+        "description.md",
+        "code_samples/",
+        "detection.md",
+        "mitigation.md",
+        "purple_playbook.md",
+        "references.md",
+        "agent_notes.md"
+      ]
+    },
+    {
+      "id": "T1059.007",
+      "platform": "Linux",
+      "status": "template_created",
+      "files": [
+        "description.md",
+        "code_samples/",
+        "detection.md",
+        "mitigation.md",
+        "purple_playbook.md",
+        "references.md",
+        "agent_notes.md"
+      ]
+    },
+    {
+      "id": "T1559.002",
+      "platform": "Windows",
+      "status": "template_created",
+      "files": [
+        "description.md",
+        "code_samples/",
+        "detection.md",
+        "mitigation.md",
+        "purple_playbook.md",
+        "references.md",
+        "agent_notes.md"
+      ]
+    },
+    {
+      "id": "T1204.002",
+      "platform": "Windows",
+      "status": "template_created",
+      "files": [
+        "description.md",
+        "code_samples/",
+        "detection.md",
+        "mitigation.md",
+        "purple_playbook.md",
+        "references.md",
+        "agent_notes.md"
+      ]
+    },
+    {
+      "id": "T1204.002",
+      "platform": "Linux",
+      "status": "template_created",
+      "files": [
+        "description.md",
+        "code_samples/",
+        "detection.md",
+        "mitigation.md",
+        "purple_playbook.md",
+        "references.md",
+        "agent_notes.md"
+      ]
+    },
+    {
+      "id": "T1204.002",
+      "platform": "Macos",
+      "status": "template_created",
+      "files": [
+        "description.md",
+        "code_samples/",
+        "detection.md",
+        "mitigation.md",
+        "purple_playbook.md",
+        "references.md",
+        "agent_notes.md"
+      ]
+    },
+    {
+      "id": "T1559.001",
+      "platform": "Windows",
+      "status": "template_created",
+      "files": [
+        "description.md",
+        "code_samples/",
+        "detection.md",
+        "mitigation.md",
+        "purple_playbook.md",
+        "references.md",
+        "agent_notes.md"
+      ]
+    },
+    {
+      "id": "T1106",
+      "platform": "Windows",
+      "status": "template_created",
+      "files": [
+        "description.md",
+        "code_samples/",
+        "detection.md",
+        "mitigation.md",
+        "purple_playbook.md",
+        "references.md",
+        "agent_notes.md"
+      ]
+    },
+    {
+      "id": "T1106",
+      "platform": "Linux",
+      "status": "template_created",
+      "files": [
+        "description.md",
+        "code_samples/",
+        "detection.md",
+        "mitigation.md",
+        "purple_playbook.md",
+        "references.md",
+        "agent_notes.md"
+      ]
+    },
+    {
+      "id": "T1106",
+      "platform": "Macos",
+      "status": "template_created",
+      "files": [
+        "description.md",
+        "code_samples/",
+        "detection.md",
+        "mitigation.md",
+        "purple_playbook.md",
+        "references.md",
+        "agent_notes.md"
+      ]
+    },
+    {
+      "id": "T1059.010",
+      "platform": "Windows",
+      "status": "template_created",
+      "files": [
+        "description.md",
+        "code_samples/",
+        "detection.md",
+        "mitigation.md",
+        "purple_playbook.md",
+        "references.md",
+        "agent_notes.md"
+      ]
+    },
+    {
+      "id": "T1674",
+      "platform": "Windows",
+      "status": "template_created",
+      "files": [
+        "description.md",
+        "code_samples/",
+        "detection.md",
+        "mitigation.md",
+        "purple_playbook.md",
+        "references.md",
+        "agent_notes.md"
+      ]
+    },
+    {
+      "id": "T1674",
+      "platform": "Linux",
+      "status": "template_created",
+      "files": [
+        "description.md",
+        "code_samples/",
+        "detection.md",
+        "mitigation.md",
+        "purple_playbook.md",
+        "references.md",
+        "agent_notes.md"
+      ]
+    },
+    {
+      "id": "T1674",
+      "platform": "Macos",
+      "status": "template_created",
+      "files": [
+        "description.md",
+        "code_samples/",
+        "detection.md",
+        "mitigation.md",
+        "purple_playbook.md",
+        "references.md",
+        "agent_notes.md"
+      ]
+    },
+    {
+      "id": "T1175",
+      "platform": "Windows",
+      "status": "template_created",
+      "files": [
+        "description.md",
+        "code_samples/",
+        "detection.md",
+        "mitigation.md",
+        "purple_playbook.md",
+        "references.md",
+        "agent_notes.md"
+      ]
+    },
+    {
+      "id": "T1064",
+      "platform": "Windows",
+      "status": "template_created",
+      "files": [
+        "description.md",
+        "code_samples/",
+        "detection.md",
+        "mitigation.md",
+        "purple_playbook.md",
+        "references.md",
+        "agent_notes.md"
+      ]
+    },
+    {
+      "id": "T1064",
+      "platform": "Linux",
+      "status": "template_created",
+      "files": [
+        "description.md",
+        "code_samples/",
+        "detection.md",
+        "mitigation.md",
+        "purple_playbook.md",
+        "references.md",
+        "agent_notes.md"
+      ]
+    },
+    {
+      "id": "T1064",
+      "platform": "Macos",
+      "status": "template_created",
+      "files": [
+        "description.md",
+        "code_samples/",
+        "detection.md",
+        "mitigation.md",
+        "purple_playbook.md",
+        "references.md",
+        "agent_notes.md"
+      ]
+    },
+    {
+      "id": "T1204",
+      "platform": "Windows",
+      "status": "template_created",
+      "files": [
+        "description.md",
+        "code_samples/",
+        "detection.md",
+        "mitigation.md",
+        "purple_playbook.md",
+        "references.md",
+        "agent_notes.md"
+      ]
+    },
+    {
+      "id": "T1204",
+      "platform": "Macos",
+      "status": "template_created",
+      "files": [
+        "description.md",
+        "code_samples/",
+        "detection.md",
+        "mitigation.md",
+        "purple_playbook.md",
+        "references.md",
+        "agent_notes.md"
+      ]
+    },
+    {
+      "id": "T1204",
+      "platform": "Linux",
+      "status": "template_created",
+      "files": [
+        "description.md",
+        "code_samples/",
+        "detection.md",
+        "mitigation.md",
+        "purple_playbook.md",
+        "references.md",
+        "agent_notes.md"
+      ]
+    },
+    {
+      "id": "T1072",
+      "platform": "Windows",
+      "status": "template_created",
+      "files": [
+        "description.md",
+        "code_samples/",
+        "detection.md",
+        "mitigation.md",
+        "purple_playbook.md",
+        "references.md",
+        "agent_notes.md"
+      ]
+    },
+    {
+      "id": "T1072",
+      "platform": "Linux",
+      "status": "template_created",
+      "files": [
+        "description.md",
+        "code_samples/",
+        "detection.md",
+        "mitigation.md",
+        "purple_playbook.md",
+        "references.md",
+        "agent_notes.md"
+      ]
+    },
+    {
+      "id": "T1072",
+      "platform": "Macos",
+      "status": "template_created",
+      "files": [
+        "description.md",
+        "code_samples/",
+        "detection.md",
+        "mitigation.md",
+        "purple_playbook.md",
+        "references.md",
+        "agent_notes.md"
+      ]
+    },
+    {
+      "id": "T1059.001",
+      "platform": "Windows",
+      "status": "template_created",
+      "files": [
+        "description.md",
+        "code_samples/",
+        "detection.md",
+        "mitigation.md",
+        "purple_playbook.md",
+        "references.md",
+        "agent_notes.md"
+      ]
+    },
+    {
+      "id": "T1061",
+      "platform": "Windows",
+      "status": "template_created",
+      "files": [
+        "description.md",
+        "code_samples/",
+        "detection.md",
+        "mitigation.md",
+        "purple_playbook.md",
+        "references.md",
+        "agent_notes.md"
+      ]
+    },
+    {
+      "id": "T1061",
+      "platform": "Linux",
+      "status": "template_created",
+      "files": [
+        "description.md",
+        "code_samples/",
+        "detection.md",
+        "mitigation.md",
+        "purple_playbook.md",
+        "references.md",
+        "agent_notes.md"
+      ]
+    },
+    {
+      "id": "T1061",
+      "platform": "Macos",
+      "status": "template_created",
+      "files": [
+        "description.md",
+        "code_samples/",
+        "detection.md",
+        "mitigation.md",
+        "purple_playbook.md",
+        "references.md",
+        "agent_notes.md"
+      ]
+    },
+    {
+      "id": "T1559",
+      "platform": "Windows",
+      "status": "template_created",
+      "files": [
+        "description.md",
+        "code_samples/",
+        "detection.md",
+        "mitigation.md",
+        "purple_playbook.md",
+        "references.md",
+        "agent_notes.md"
+      ]
+    },
+    {
+      "id": "T1559",
+      "platform": "Linux",
+      "status": "template_created",
+      "files": [
+        "description.md",
+        "code_samples/",
+        "detection.md",
+        "mitigation.md",
+        "purple_playbook.md",
+        "references.md",
+        "agent_notes.md"
+      ]
+    },
+    {
+      "id": "T1559",
+      "platform": "Macos",
+      "status": "template_created",
+      "files": [
+        "description.md",
+        "code_samples/",
+        "detection.md",
+        "mitigation.md",
+        "purple_playbook.md",
+        "references.md",
+        "agent_notes.md"
+      ]
+    },
+    {
+      "id": "T1059.011",
+      "platform": "Windows",
+      "status": "template_created",
+      "files": [
+        "description.md",
+        "code_samples/",
+        "detection.md",
+        "mitigation.md",
+        "purple_playbook.md",
+        "references.md",
+        "agent_notes.md"
+      ]
+    },
+    {
+      "id": "T1059.011",
+      "platform": "Linux",
+      "status": "template_created",
+      "files": [
+        "description.md",
+        "code_samples/",
+        "detection.md",
+        "mitigation.md",
+        "purple_playbook.md",
+        "references.md",
+        "agent_notes.md"
+      ]
+    },
+    {
+      "id": "T1059.011",
+      "platform": "Macos",
+      "status": "template_created",
+      "files": [
+        "description.md",
+        "code_samples/",
+        "detection.md",
+        "mitigation.md",
+        "purple_playbook.md",
+        "references.md",
+        "agent_notes.md"
+      ]
+    },
+    {
+      "id": "T1203",
+      "platform": "Windows",
+      "status": "template_created",
+      "files": [
+        "description.md",
+        "code_samples/",
+        "detection.md",
+        "mitigation.md",
+        "purple_playbook.md",
+        "references.md",
+        "agent_notes.md"
+      ]
+    },
+    {
+      "id": "T1203",
+      "platform": "Linux",
+      "status": "template_created",
+      "files": [
+        "description.md",
+        "code_samples/",
+        "detection.md",
+        "mitigation.md",
+        "purple_playbook.md",
+        "references.md",
+        "agent_notes.md"
+      ]
+    },
+    {
+      "id": "T1203",
+      "platform": "Macos",
+      "status": "template_created",
+      "files": [
+        "description.md",
+        "code_samples/",
+        "detection.md",
+        "mitigation.md",
+        "purple_playbook.md",
+        "references.md",
+        "agent_notes.md"
+      ]
+    },
+    {
+      "id": "T1059.006",
+      "platform": "Windows",
+      "status": "template_created",
+      "files": [
+        "description.md",
+        "code_samples/",
+        "detection.md",
+        "mitigation.md",
+        "purple_playbook.md",
+        "references.md",
+        "agent_notes.md"
+      ]
+    },
+    {
+      "id": "T1059.006",
+      "platform": "Linux",
+      "status": "template_created",
+      "files": [
+        "description.md",
+        "code_samples/",
+        "detection.md",
+        "mitigation.md",
+        "purple_playbook.md",
+        "references.md",
+        "agent_notes.md"
+      ]
+    },
+    {
+      "id": "T1059.006",
+      "platform": "Macos",
+      "status": "template_created",
+      "files": [
+        "description.md",
+        "code_samples/",
+        "detection.md",
+        "mitigation.md",
+        "purple_playbook.md",
+        "references.md",
+        "agent_notes.md"
+      ]
+    },
+    {
+      "id": "T1569",
+      "platform": "Windows",
+      "status": "template_created",
+      "files": [
+        "description.md",
+        "code_samples/",
+        "detection.md",
+        "mitigation.md",
+        "purple_playbook.md",
+        "references.md",
+        "agent_notes.md"
+      ]
+    },
+    {
+      "id": "T1569",
+      "platform": "Linux",
+      "status": "template_created",
+      "files": [
+        "description.md",
+        "code_samples/",
+        "detection.md",
+        "mitigation.md",
+        "purple_playbook.md",
+        "references.md",
+        "agent_notes.md"
+      ]
+    },
+    {
+      "id": "T1569",
+      "platform": "Macos",
+      "status": "template_created",
+      "files": [
+        "description.md",
+        "code_samples/",
+        "detection.md",
+        "mitigation.md",
+        "purple_playbook.md",
+        "references.md",
+        "agent_notes.md"
+      ]
+    },
+    {
+      "id": "T1059.003",
+      "platform": "Windows",
+      "status": "template_created",
+      "files": [
+        "description.md",
+        "code_samples/",
+        "detection.md",
+        "mitigation.md",
+        "purple_playbook.md",
+        "references.md",
+        "agent_notes.md"
+      ]
+    },
+    {
+      "id": "T1059.005",
+      "platform": "Windows",
+      "status": "template_created",
+      "files": [
+        "description.md",
+        "code_samples/",
+        "detection.md",
+        "mitigation.md",
+        "purple_playbook.md",
+        "references.md",
+        "agent_notes.md"
+      ]
+    },
+    {
+      "id": "T1059.005",
+      "platform": "Linux",
+      "status": "template_created",
+      "files": [
+        "description.md",
+        "code_samples/",
+        "detection.md",
+        "mitigation.md",
+        "purple_playbook.md",
+        "references.md",
+        "agent_notes.md"
+      ]
+    },
+    {
+      "id": "T1059.005",
+      "platform": "Macos",
+      "status": "template_created",
+      "files": [
+        "description.md",
+        "code_samples/",
+        "detection.md",
+        "mitigation.md",
+        "purple_playbook.md",
+        "references.md",
+        "agent_notes.md"
+      ]
+    },
+    {
+      "id": "T1204.004",
+      "platform": "Windows",
+      "status": "template_created",
+      "files": [
+        "description.md",
+        "code_samples/",
+        "detection.md",
+        "mitigation.md",
+        "purple_playbook.md",
+        "references.md",
+        "agent_notes.md"
+      ]
+    },
+    {
+      "id": "T1204.004",
+      "platform": "Linux",
+      "status": "template_created",
+      "files": [
+        "description.md",
+        "code_samples/",
+        "detection.md",
+        "mitigation.md",
+        "purple_playbook.md",
+        "references.md",
+        "agent_notes.md"
+      ]
+    },
+    {
+      "id": "T1204.004",
+      "platform": "Macos",
+      "status": "template_created",
+      "files": [
+        "description.md",
+        "code_samples/",
+        "detection.md",
+        "mitigation.md",
+        "purple_playbook.md",
+        "references.md",
+        "agent_notes.md"
+      ]
+    },
+    {
+      "id": "T1204.001",
+      "platform": "Windows",
+      "status": "template_created",
+      "files": [
+        "description.md",
+        "code_samples/",
+        "detection.md",
+        "mitigation.md",
+        "purple_playbook.md",
+        "references.md",
+        "agent_notes.md"
+      ]
+    },
+    {
+      "id": "T1204.001",
+      "platform": "Linux",
+      "status": "template_created",
+      "files": [
+        "description.md",
+        "code_samples/",
+        "detection.md",
+        "mitigation.md",
+        "purple_playbook.md",
+        "references.md",
+        "agent_notes.md"
+      ]
+    },
+    {
+      "id": "T1204.001",
+      "platform": "Macos",
+      "status": "template_created",
+      "files": [
+        "description.md",
+        "code_samples/",
+        "detection.md",
+        "mitigation.md",
+        "purple_playbook.md",
+        "references.md",
+        "agent_notes.md"
+      ]
+    },
+    {
+      "id": "T1569.002",
+      "platform": "Windows",
+      "status": "template_created",
+      "files": [
+        "description.md",
+        "code_samples/",
+        "detection.md",
+        "mitigation.md",
+        "purple_playbook.md",
+        "references.md",
+        "agent_notes.md"
+      ]
+    },
+    {
+      "id": "T1053.002",
+      "platform": "Windows",
+      "status": "template_created",
+      "files": [
+        "description.md",
+        "code_samples/",
+        "detection.md",
+        "mitigation.md",
+        "purple_playbook.md",
+        "references.md",
+        "agent_notes.md"
+      ]
+    },
+    {
+      "id": "T1053.002",
+      "platform": "Linux",
+      "status": "template_created",
+      "files": [
+        "description.md",
+        "code_samples/",
+        "detection.md",
+        "mitigation.md",
+        "purple_playbook.md",
+        "references.md",
+        "agent_notes.md"
+      ]
+    },
+    {
+      "id": "T1053.002",
+      "platform": "Macos",
+      "status": "template_created",
+      "files": [
+        "description.md",
+        "code_samples/",
+        "detection.md",
+        "mitigation.md",
+        "purple_playbook.md",
+        "references.md",
+        "agent_notes.md"
+      ]
     }
   ],
   "outstanding_tasks": [

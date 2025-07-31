@@ -1,0 +1,9 @@
+Technique T1059 is a type of social engineering attack known as credential phishing, which involves attempting to obtain sensitive user credentials such as usernames and passwords by masquerading as a legitimate entity or website. In the Windows environment, this can be done through various channels such as emails, instant messages, or pop-up windows that appear unexpectedly when the user is working on their device.
+
+To begin with, the attacker needs to gather information about the target user's interests and online behavior patterns, which can include browsing habits, email addresses, social media accounts, and other forms of personal data. This information is then used to create a credible and enticing message that appears to come from a trusted source or entity, such as a bank, online retailer, or government agency.
+
+The attacker may use various tactics to distribute the phishing message, including email campaigns, social media posts, pop-ups, advertisements, and other forms of digital communication. The message typically contains a link that appears to direct the user to a legitimate website, but in fact, it takes them to a fraudulent site that looks identical or similar to the real one.
+
+Once the user enters their credentials into the fake login page, they are prompted to enter additional information such as credit card details or other sensitive data. The attacker can then use this information for various malicious purposes, including identity theft, financial fraud, and other cybercrimes.
+
+To mitigate against credential phishing attacks in the Windows environment, users should be aware of their online behavior patterns and be cautious when clicking on unfamiliar links or downloading attachments from unknown sources. Additionally, organizations can implement security controls such as two-factor authentication, password managers, intrusion detection systems, and employee training to help prevent credential phishing attacks.

@@ -1,0 +1,7 @@
+Detecting the T1547 technique is not possible using a single rule, as it involves a combination of techniques and activities that are used to gather information about a target system or network. However, some rules that can help detect T1547 include:
+
+- Executing suspicious commands from the Windows command prompt (cmd) or PowerShell command window. This could indicate that an attacker is attempting to gain access to sensitive data or information on the system.
+- Monitoring for changes in the file structure and contents of directories and files on the system. Any unexpected modifications or deletions can be indicative of a potential compromise attempt.
+- Monitoring for unusual network traffic patterns, including port scanning, protocol testing, and DNS requests that indicate an attacker is attempting to gather information about the system or network.
+
+Overall, detecting T1547 requires a comprehensive approach that involves multiple security technologies, such as network intrusion detection systems (IDS), endpoint protection software, and security information and event management (SIEM) solutions. These tools can help identify suspicious activities on the system or network and notify the appropriate personnel for further investigation.

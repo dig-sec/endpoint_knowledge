@@ -1,0 +1,15 @@
+Technique T1003 on Windows is a technique where attackers attempt to dump credentials from the system's memory or OS caches in order to obtain account login and credential material. The technique uses various methods, including using the Windows API to retrieve cached credentials stored in memory, using malware or exploits to gain access to the system's memory and steal credentials, or by using brute-force attacks on the system's hashed passwords.
+
+### Adversary Use Cases:
+Attackers may use this technique for a variety of reasons, including to gain unauthorized access to systems and networks, to steal sensitive data or perform malicious activities, or to spread malware or ransomware. Attackers may also use this technique to automate account logins and access multiple accounts simultaneously.
+
+### Platform-Specific Implementation:
+On Windows, attackers may use various methods to dump credentials from the system's memory or OS caches, including using malware or exploits to gain access to the system's memory and steal credentials, or by using brute-force attacks on the system's hashed passwords. Additionally, credential dumping techniques can be implemented in various ways depending on the platform and version of Windows being targeted.
+
+### Detection Considerations:
+Detection considerations for this technique include monitoring for unauthorized access to systems or accounts, checking for suspicious activity in system logs such as attempts to access privileged resources, and reviewing event logs for indicators of malware or exploit activity. Additionally, implementing multi-factor authentication (MFA) and enabling password policies that require strong passwords can help mitigate the risk of credential dumping attacks.
+
+In terms of detection challenges, it may be difficult to detect this technique as attackers may use stealthy methods to avoid detection. Additionally, Windows caches can be volatile and may not always contain the most recent credentials, making it difficult to accurately detect credential dumping attempts. However, monitoring for suspicious activity in system logs and reviewing event logs can help identify potential credential dumping attacks.
+
+### Key Takeaways:
+In conclusion, T1003 on Windows is a technique where attackers attempt to dump credentials from the system's memory or OS caches in order to obtain account login and credential material. Attackers may use various methods to dump credentials, including using malware or exploits to gain access to the system's memory and steal credentials, or by using brute-force attacks on the system's hashed passwords. Detection considerations for this technique include monitoring for unauthorized access to systems or accounts, checking for suspicious activity in system logs such as attempts to access privileged resources, and reviewing event logs for indicators of malware or exploit activity.

@@ -1,0 +1,23 @@
+Technique CD-4030AA: Windows Network Segmentation
+## Overview 
+Network segmentation is a fundamental network security best practice. It involves dividing the network into different zones based on their security needs and separating traffic flows between them. This technique can help protect against a variety of attacks, including man-in-the-middle (MitM) attacks, denial-of-service (DoS) attacks, and privilege escalation attacks.
+## Technical Details 
+Network segmentation typically involves creating separate zones for different types of traffic, such as public Internet access, internal network traffic, and administrative access. Each zone is then secured using a combination of firewalls, intrusion detection systems (IDS), and other security controls. This can involve setting up VLANs or segregating traffic through routing rules.
+## Adversary Use Cases 
+Attackers often use network segmentation to launch attacks from one zone to another. For example, they may use a public Internet connection to access internal resources without being detected by security controls on the internal network. By isolating these zones and controlling network traffic flows, organizations can limit an attacker's ability to move laterally within their environment.
+## Platform-Specific Implementation 
+Windows provides several tools for implementing network segmentation, including:
+1. VLANs - Virtual LANs are used to create separate physical networks that share a common infrastructure, such as switches and routers. This can be useful for creating isolated zones within the same environment.
+2. Routing filters - Windows includes built-in IP routing capabilities that allow administrators to filter traffic based on destination IP address. This can help prevent traffic from unauthorized sources from reaching internal resources.
+3. Domain isolation - Domain isolation is a feature in Windows Server 2016 that allows administrators to create isolated network domains within the same domain controller. This can be useful for creating separate administrative zones with access to different resources.
+## Detection Considerations 
+Network segmentation can be difficult to detect, as it involves changes to network infrastructure and traffic flows. However, there are several key indicators that may suggest a lack of network segmentation:
+1. High levels of unauthorized network traffic - Attackers often try to move laterally within the environment by exploiting weaknesses in network segmentation controls. By detecting high levels of unauthorized traffic, organizations can identify potential security vulnerabilities and take appropriate measures to mitigate them.
+2. Unexpected network connections - Network segmentation typically involves creating separate zones for different types of traffic. Anomalous network connections that do not match expected patterns may indicate a lack of network segmentation or an unauthorized connection attempt. 
+3. Unauthorized access to sensitive resources - Attackers often target internal resources, such as administrative systems and databases, in order to gain control over the entire environment. By monitoring for unauthorized access to these resources, organizations can detect potential security threats and take appropriate action to mitigate them.
+## Actionable Recommendations 
+To implement network segmentation effectively, organizations should follow these best practices:
+1. Start with a clear understanding of the organization's network architecture - This will help identify areas where network segmentation can be implemented most effectively.
+2. Implement strong firewall rules - Firewalls are an essential component of any network security strategy. By configuring firewalls to block unauthorized traffic, organizations can protect against a wide range of threats.
+3. Use intrusion detection systems (IDS) and other security controls - IDS can help detect anomalous behavior within the network environment, such as suspicious traffic patterns or unauthorized connections. Organizations should also consider implementing other security controls, such as access control lists (ACLs), to further restrict traffic flows.
+4. Regularly monitor network activity - Network segmentation is only effective if it's actively managed and monitored. By monitoring network traffic patterns and looking for unusual behavior, organizations can quickly identify potential security threats and take appropriate action to mitigate them.

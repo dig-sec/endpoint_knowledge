@@ -21,57 +21,62 @@ except ImportError:
 class UniversalProjectManager:
     def __init__(self, project_root: str = "."):
         self.project_root = project_root
-        self.mitre_status_file = os.path.join(project_root, "project_status.json")
-        self.universal_status_file = os.path.join(project_root, "universal_status.json")
         
-        self.mitre_researcher = MITREResearcher()
+        # Method-centric approach: Universal methods are primary
+        self.universal_status_file = os.path.join(project_root, "security_methods.json")
+        self.mitre_status_file = os.path.join(project_root, "mitre_reference.json")  # MITRE as reference
+        
         self.universal_manager = UniversalTechniqueManager(project_root)
+        self.mitre_researcher = MITREResearcher()  # For reference/mapping only
         
-        # Load current status
+        # Load methods first, MITRE second
+        self.universal_methods = self._load_universal_status()
         self.mitre_techniques = self._load_mitre_status()
-        self.universal_techniques = self._load_universal_status()
+        
+        print(f"[*] Loaded {len(self.universal_methods)} security methods, {len(self.mitre_techniques)} MITRE references")
+    
+    def _load_universal_status(self) -> List[Dict]:
+        """Load universal security methods (primary focus)"""
+        if os.path.exists(self.universal_status_file):
+            try:
+                with open(self.universal_status_file, 'r') as f:
+                    data = json.load(f)
+                    return data.get("methods", [])  # Changed from "techniques" to "methods"
+            except Exception as e:
+                print(f"[-] Error loading security methods: {e}")
+        return []
     
     def _load_mitre_status(self) -> List[Dict]:
-        """Load MITRE technique status"""
+        """Load MITRE technique references (secondary/mapping)"""
         if os.path.exists(self.mitre_status_file):
             try:
                 with open(self.mitre_status_file, 'r') as f:
                     data = json.load(f)
                     return data.get("techniques", [])
             except Exception as e:
-                print(f"[-] Error loading MITRE status: {e}")
-        return []
-    
-    def _load_universal_status(self) -> List[Dict]:
-        """Load universal technique status"""
-        if os.path.exists(self.universal_status_file):
-            try:
-                with open(self.universal_status_file, 'r') as f:
-                    data = json.load(f)
-                    return data.get("techniques", [])
-            except Exception as e:
-                print(f"[-] Error loading universal status: {e}")
+                print(f"[-] Error loading MITRE references: {e}")
         return []
     
     def save_universal_status(self):
-        """Save universal technique status"""
+        """Save universal security methods (primary focus)"""
         try:
             # Generate status from universal manager
-            universal_status = []
+            method_status = []
             for technique in self.universal_manager.techniques.values():
                 structure = self.universal_manager.get_technique_structure(technique.id)
-                universal_status.append({
+                method_status.append({
                     "id": technique.id,
                     "name": technique.name,
                     "type": technique.technique_type.value,
                     "category": technique.category.value,
-                    "platform": technique.platforms[0] if technique.platforms else "Generic",
+                    "primary_platform": technique.platforms[0] if technique.platforms else "Generic",
                     "platforms": technique.platforms,
-                    "status": "pending",  # Default status
+                    "status": "pending",
                     "files": structure.get("files", []),
                     "severity": technique.severity,
                     "confidence": technique.confidence,
-                    "created_date": technique.created_date
+                    "created_date": technique.created_date,
+                    "mitre_mappings": getattr(technique, 'related_mitre', [])  # Map to MITRE if relevant
                 })
             
             # Create backup
@@ -81,40 +86,43 @@ class UniversalProjectManager:
                 shutil.copy2(self.universal_status_file, backup_file)
                 print(f"[+] Created backup: {backup_file}")
             
-            # Save status
+            # Save methods
             data = {
-                "version": "1.0",
+                "version": "2.0",
+                "focus": "security_methods",
                 "last_updated": __import__('datetime').datetime.now().isoformat(),
-                "techniques": universal_status
+                "methods": method_status
             }
             
             with open(self.universal_status_file, 'w') as f:
                 json.dump(data, f, indent=2)
             
-            print(f"[+] Saved status for {len(universal_status)} universal techniques")
-            self.universal_techniques = universal_status
+            print(f"[+] Saved {len(method_status)} security methods")
+            self.universal_methods = method_status
             
         except Exception as e:
-            print(f"[-] Error saving universal status: {e}")
+            print(f"[-] Error saving security methods: {e}")
     
     def get_all_techniques(self) -> List[Dict]:
-        """Get all techniques (MITRE + Universal) with type identification"""
-        all_techniques = []
+        """Get all methods (Universal + MITRE references) with method-centric priority"""
+        all_methods = []
         
-        # Add MITRE techniques
+        # Add universal methods first (primary focus)
+        for method in self.universal_methods:
+            method_copy = method.copy()
+            method_copy["source"] = "security_method"
+            method_copy["priority"] = "primary"
+            all_methods.append(method_copy)
+        
+        # Add MITRE techniques as references (secondary)
         for technique in self.mitre_techniques:
             technique_copy = technique.copy()
-            technique_copy["source"] = "mitre"
+            technique_copy["source"] = "mitre_reference"
+            technique_copy["priority"] = "reference"
             technique_copy["technique_type"] = "mitre_attack"
-            all_techniques.append(technique_copy)
+            all_methods.append(technique_copy)
         
-        # Add universal techniques
-        for technique in self.universal_techniques:
-            technique_copy = technique.copy()
-            technique_copy["source"] = "universal"
-            all_techniques.append(technique_copy)
-        
-        return all_techniques
+        return all_methods
     
     def get_technique_by_id(self, technique_id: str) -> Dict:
         """Get technique by ID from any source"""
@@ -127,12 +135,12 @@ class UniversalProjectManager:
                 technique_copy["technique_type"] = "mitre_attack"
                 return technique_copy
         
-        # Check universal techniques  
-        for technique in self.universal_techniques:
-            if technique["id"] == technique_id:
-                technique_copy = technique.copy()
-                technique_copy["source"] = "universal"
-                return technique_copy
+        # Check universal methods
+        for method in self.universal_methods:
+            if method["id"] == technique_id:
+                method_copy = method.copy()
+                method_copy["source"] = "security_method"
+                return method_copy
         
         return {}
     
@@ -177,14 +185,14 @@ class UniversalProjectManager:
             else:
                 validation_results["mitre"]["valid"].append(technique_id)
         
-        print("[*] Validating universal techniques...")
-        for technique in self.universal_techniques:
-            technique_id = technique["id"]
-            # Universal techniques are valid by definition if they exist in our manager
-            if technique_id in self.universal_manager.techniques:
-                validation_results["universal"]["valid"].append(technique_id)
+        print("[*] Validating universal methods...")
+        for method in self.universal_methods:
+            method_id = method["id"]
+            # Universal methods are valid by definition if they exist in our manager
+            if method_id in self.universal_manager.techniques:
+                validation_results["universal"]["valid"].append(method_id)
             else:
-                validation_results["universal"]["invalid"].append(technique_id)
+                validation_results["universal"]["invalid"].append(method_id)
         
         return validation_results
     
@@ -318,12 +326,106 @@ if __name__ == "__main__":
     manager = UniversalProjectManager()
     
     # Generate and save universal status
-    print("Generating universal technique status...")
-    manager.save_universal_status()
-    
-    # Get all techniques
-    all_techniques = manager.get_all_techniques()
-    print(f"\nTotal techniques in knowledge base: {len(all_techniques)}")
+    print("=== Universal Project Manager MITRE Sync ===\n")
+    manager = UniversalProjectManager()
+
+    # --- PATCH: Fetch and save all MITRE techniques to project_status.json ---
+    print("[*] Fetching MITRE ATT&CK techniques...")
+    mitre_researcher = manager.mitre_researcher
+    # Fetch MITRE techniques (enterprise-attack)
+    try:
+        # Use MITREResearcher to fetch all techniques
+        url = f"{mitre_researcher.api_base}/enterprise-attack/enterprise-attack.json"
+        cache_file = os.path.join("/tmp", "enterprise-attack.json")
+        if os.path.exists(cache_file):
+            with open(cache_file, 'r') as f:
+                data = json.load(f)
+        else:
+            import requests
+            response = requests.get(url)
+            response.raise_for_status()
+            data = response.json()
+            with open(cache_file, 'w') as f:
+                json.dump(data, f)
+        # Extract techniques and sub-techniques
+        techniques = []
+        for obj in data.get("objects", []):
+            if obj.get("type") == "attack-pattern":
+                ext_refs = obj.get("external_references", [])
+                mitre_id = None
+                for ref in ext_refs:
+                    if ref.get("source_name") == "mitre-attack":
+                        mitre_id = ref.get("external_id")
+                        break
+                if mitre_id:
+                    platforms = obj.get("x_mitre_platforms", ["Unknown"])
+                    technique = {
+                        "id": mitre_id,
+                        "name": obj.get("name", "Unknown"),
+                        "platform": platforms[0] if platforms else "Unknown",
+                        "platforms": platforms,
+                        "status": "pending",
+                        "files": [],
+                        "description": obj.get("description", "")
+                    }
+                    techniques.append(technique)
+                    # Add sub-techniques if present
+                    for sub_id in obj.get("x_mitre_subtechnique_of", []):
+                        # Sub-technique IDs are usually in external_references as well
+                        # But we need to create a unique ID for each sub-technique
+                        sub_ext_refs = obj.get("external_references", [])
+                        sub_mitre_id = None
+                        for sub_ref in sub_ext_refs:
+                            if sub_ref.get("source_name") == "mitre-attack":
+                                sub_mitre_id = sub_ref.get("external_id")
+                                break
+                        if sub_mitre_id and "." in sub_mitre_id:
+                            sub_technique = {
+                                "id": sub_mitre_id,
+                                "name": obj.get("name", "Unknown"),
+                                "platform": platforms[0] if platforms else "Unknown",
+                                "platforms": platforms,
+                                "status": "pending",
+                                "files": [],
+                                "description": obj.get("description", "")
+                            }
+                            techniques.append(sub_technique)
+        print(f"[+] Fetched {len(techniques)} MITRE techniques.")
+        # Merge with existing project_status.json if present
+        existing_techniques = {}
+        if os.path.exists("project_status.json"):
+            with open("project_status.json", "r") as f:
+                try:
+                    existing_status = json.load(f)
+                    for t in existing_status.get("techniques", []):
+                        existing_techniques[t["id"]] = t
+                except Exception as e:
+                    print(f"[-] Error loading existing project_status.json: {e}")
+        # Merge: update metadata, preserve existing fields
+        merged_techniques = []
+        for new in techniques:
+            if new["id"] in existing_techniques:
+                merged = existing_techniques[new["id"]].copy()
+                # Update metadata fields from new
+                for k in ["name", "platform", "platforms", "description"]:
+                    merged[k] = new[k]
+                merged_techniques.append(merged)
+            else:
+                merged_techniques.append(new)
+        # Add any existing techniques not present in new fetch (custom/manual)
+        for eid, etech in existing_techniques.items():
+            if eid not in [t["id"] for t in techniques]:
+                merged_techniques.append(etech)
+        status = {
+            "version": "1.0",
+            "last_updated": __import__('datetime').datetime.now().isoformat(),
+            "techniques": merged_techniques
+        }
+        with open("project_status.json", "w") as f:
+            json.dump(status, f, indent=2)
+        print(f"[+] Saved {len(merged_techniques)} techniques to project_status.json (merged)")
+    except Exception as e:
+        print(f"[-] Error fetching MITRE techniques: {e}")
     
     # Platform breakdown
     windows_techniques = manager.get_techniques_by_platform("Windows")

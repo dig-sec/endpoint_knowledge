@@ -1,0 +1,142 @@
+{
+  "version": "2.0",
+  "focus": "security_methods",
+  "last_updated": "2025-07-31T20:57:29.601177",
+  "methods": [
+    {
+      "id": "CD-4030AA",
+      "name": "Zero Trust Network Segmentation",
+      "type": "custom_defensive",
+      "category": "network_security",
+      "primary_platform": "Windows",
+      "platforms": [
+        "Windows",
+        "Linux",
+        "Network"
+      ],
+      "status": "pending",
+      "files": [
+        "description.md",
+        "references.md",
+        "notes.md",
+        "implementation.md",
+        "testing.md",
+        "metrics.md",
+        "tools.md"
+      ],
+      "severity": "high",
+      "confidence": "medium",
+      "created_date": "2025-07-31T20:57:29.600607",
+      "mitre_mappings": []
+    },
+    {
+      "id": "ET-AE948C",
+      "name": "AI-Powered Behavioral Evasion",
+      "type": "emerging_threat",
+      "category": "defense_evasion",
+      "primary_platform": "Windows",
+      "platforms": [
+        "Windows",
+        "Linux",
+        "macOS"
+      ],
+      "status": "pending",
+      "files": [
+        "description.md",
+        "references.md",
+        "notes.md",
+        "detection.md",
+        "mitigation.md",
+        "purple_playbook.md",
+        "code_samples/",
+        "indicators.md"
+      ],
+      "severity": "critical",
+      "confidence": "low",
+      "created_date": "2025-07-31T20:57:29.600640",
+      "mitre_mappings": []
+    },
+    {
+      "id": "BTM-485C64",
+      "name": "Hypothesis-Driven Threat Hunting",
+      "type": "blue_team_method",
+      "category": "threat_hunting",
+      "primary_platform": "Windows",
+      "platforms": [
+        "Windows",
+        "Linux",
+        "macOS",
+        "Cloud"
+      ],
+      "status": "pending",
+      "files": [
+        "description.md",
+        "references.md",
+        "notes.md",
+        "implementation.md",
+        "testing.md",
+        "metrics.md",
+        "tools.md"
+      ],
+      "severity": "medium",
+      "confidence": "medium",
+      "created_date": "2025-07-31T20:57:29.600655",
+      "mitre_mappings": [
+        "T1059",
+        "T1055",
+        "T1547"
+      ]
+    },
+    {
+      "id": "INF-76ECA2",
+      "name": "Container Runtime Security Monitoring",
+      "type": "infrastructure",
+      "category": "endpoint_security",
+      "primary_platform": "Linux",
+      "platforms": [
+        "Linux",
+        "Cloud"
+      ],
+      "status": "pending",
+      "files": [
+        "description.md",
+        "references.md",
+        "notes.md",
+        "configuration.md",
+        "monitoring.md",
+        "maintenance.md",
+        "troubleshooting.md"
+      ],
+      "severity": "medium",
+      "confidence": "medium",
+      "created_date": "2025-07-31T20:57:29.600662",
+      "mitre_mappings": []
+    },
+    {
+      "id": "IR-A91BA5",
+      "name": "Ransomware Incident Response Protocol",
+      "type": "incident_response",
+      "category": "response",
+      "primary_platform": "Windows",
+      "platforms": [
+        "Windows",
+        "Linux",
+        "Network"
+      ],
+      "status": "pending",
+      "files": [
+        "description.md",
+        "references.md",
+        "notes.md",
+        "playbook.md",
+        "escalation.md",
+        "recovery.md",
+        "lessons_learned.md"
+      ],
+      "severity": "medium",
+      "confidence": "medium",
+      "created_date": "2025-07-31T20:57:29.600668",
+      "mitre_mappings": []
+    }
+  ]
+}

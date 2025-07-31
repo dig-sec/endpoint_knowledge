@@ -167,5 +167,10 @@ Focus on actionable insights and technical depth."""
 }
 
 def get_prompt(fname, technique):
+    """Get prompt template for technique/method (handles both formats)"""
     template = PROMPT_TEMPLATES.get(fname, "Write documentation for {id} {fname} on {platform}.")
-    return template.format(id=technique["id"], platform=technique["platform"], fname=fname)
+    
+    # Handle both method and MITRE technique formats
+    platform = technique.get("primary_platform", technique.get("platform", "Generic"))
+    
+    return template.format(id=technique["id"], platform=platform, fname=fname)

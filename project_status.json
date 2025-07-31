@@ -1,0 +1,50 @@
+{
+  "techniques": [
+    {
+      "id": "T1059",
+      "platform": "Windows",
+      "status": "complete",
+      "files": ["description.md", "code_samples/", "detection.md", "mitigation.md", "purple_playbook.md", "references.md", "agent_notes.md"]
+    },
+    {
+      "id": "T1055",
+      "platform": "Windows",
+      "status": "complete",
+      "files": ["description.md", "code_samples/", "detection.md", "mitigation.md", "purple_playbook.md", "references.md", "agent_notes.md"]
+    },
+    {
+      "id": "T1547",
+      "platform": "Windows",
+      "status": "complete",
+      "files": ["description.md", "code_samples/", "detection.md", "mitigation.md", "purple_playbook.md", "references.md", "agent_notes.md"]
+    },
+    {
+      "id": "T1038",
+      "platform": "Windows",
+      "status": "complete",
+      "files": ["description.md", "code_samples/", "detection.md", "mitigation.md", "purple_playbook.md", "references.md", "agent_notes.md"]
+    },
+    {
+      "id": "T1552",
+      "platform": "Linux",
+      "status": "complete",
+      "files": ["description.md", "code_samples/", "detection.md", "mitigation.md", "purple_playbook.md", "references.md", "agent_notes.md"]
+    },
+    {
+      "id": "T1053",
+      "platform": "Linux",
+      "status": "complete",
+      "files": ["description.md", "code_samples/", "detection.md", "mitigation.md", "purple_playbook.md", "references.md", "agent_notes.md"]
+    },
+    {
+      "id": "T1574",
+      "platform": "Linux",
+      "status": "complete",
+      "files": ["description.md", "code_samples/", "detection.md", "mitigation.md", "purple_playbook.md", "references.md", "agent_notes.md"]
+    }
+  ],
+  "outstanding_tasks": [
+    "Expand agent automation notes",
+    "Add detection and mitigation strategies for new techniques"
+  ]
+}

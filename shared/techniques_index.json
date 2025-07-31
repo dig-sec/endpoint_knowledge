@@ -1,0 +1,16 @@
+{
+  "techniques": [
+    {
+      "id": "T1059",
+      "name": "Command and Scripting Interpreter",
+      "platform": "Windows",
+      "status": "complete"
+    },
+    {
+      "id": "T1055",
+      "name": "Process Injection",
+      "platform": "Windows",
+      "status": "complete"
+    }
+  ]
+}

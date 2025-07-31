@@ -1,0 +1,44 @@
+{
+  "techniques": [
+    {
+      "id": "T1059",
+      "name": "Command and Scripting Interpreter",
+      "category": "Execution",
+      "platform": "Windows",
+      "description_path": "internals/techniques/T1059/description.md",
+      "code_samples_path": "internals/techniques/T1059/code_samples/",
+      "references_path": "internals/techniques/T1059/references.md",
+      "agent_notes_path": "internals/techniques/T1059/agent_notes.md"
+    },
+    {
+      "id": "T1038",
+      "name": "DLL Search Order Hijacking",
+      "category": "Persistence, Privilege Escalation",
+      "platform": "Windows",
+      "description_path": "internals/techniques/T1038/description.md",
+      "code_samples_path": "internals/techniques/T1038/code_samples/",
+      "references_path": "internals/techniques/T1038/references.md",
+      "agent_notes_path": "internals/techniques/T1038/agent_notes.md"
+    }
+    {
+      "id": "T1055",
+      "name": "Process Injection",
+      "category": "Defense Evasion, Privilege Escalation",
+      "platform": "Windows",
+      "description_path": "internals/techniques/T1055/description.md",
+      "code_samples_path": "internals/techniques/T1055/code_samples/",
+      "references_path": "internals/techniques/T1055/references.md",
+      "agent_notes_path": "internals/techniques/T1055/agent_notes.md"
+    }
+    {
+      "id": "T1547",
+      "name": "Registry Run Keys/Startup Folder",
+      "category": "Persistence",
+      "platform": "Windows",
+      "description_path": "internals/techniques/T1547/description.md",
+      "code_samples_path": "internals/techniques/T1547/code_samples/",
+      "references_path": "internals/techniques/T1547/references.md",
+      "agent_notes_path": "internals/techniques/T1547/agent_notes.md"
+    }
+  ]
+}

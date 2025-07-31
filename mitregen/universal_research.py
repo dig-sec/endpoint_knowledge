@@ -5,9 +5,18 @@ Provides intelligent context generation for any type of security technique.
 
 import os
 import json
+import sys
 from typing import Dict, List, Tuple, Optional
-from universal_techniques import UniversalTechniqueManager, TechniqueType, TechniqueCategory
-from enhanced_research import MITREResearcher
+
+# Add current directory to path for relative imports
+sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+
+try:
+    from .universal_techniques import UniversalTechniqueManager, TechniqueType, TechniqueCategory
+    from .enhanced_research import MITREResearcher
+except ImportError:
+    from universal_techniques import UniversalTechniqueManager, TechniqueType, TechniqueCategory
+    from enhanced_research import MITREResearcher
 
 class UniversalResearcher:
     def __init__(self):
@@ -16,12 +25,17 @@ class UniversalResearcher:
         
         # Load external research capabilities if available
         try:
-            from external_research import ExternalSourceScraper
+            from .external_research import ExternalSourceScraper
             self.external_scraper = ExternalSourceScraper()
             self.external_research_available = True
         except ImportError:
-            self.external_scraper = None
-            self.external_research_available = False
+            try:
+                from external_research import ExternalSourceScraper
+                self.external_scraper = ExternalSourceScraper()
+                self.external_research_available = True
+            except ImportError:
+                self.external_scraper = None
+                self.external_research_available = False
     
     def identify_technique_type(self, technique_id: str) -> str:
         """Identify if this is a MITRE technique or custom technique"""

@@ -5,7 +5,16 @@ Provides easy access to generation with different options and platforms.
 """
 
 import argparse
-from generate import main as generate_main
+import sys
+import os
+
+# Add current directory to path for relative imports
+sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+
+try:
+    from .generate import main as generate_main
+except ImportError:
+    from generate import main as generate_main
 
 def parse_args():
     parser = argparse.ArgumentParser(

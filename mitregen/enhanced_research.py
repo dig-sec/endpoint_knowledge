@@ -6,18 +6,26 @@ This module provides comprehensive research context using multiple sources and v
 import os
 import json
 import requests
+import sys
 from typing import Dict, List, Tuple, Optional
 from datetime import datetime
 import time
 
+# Add current directory to path for relative imports
+sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+
 # Import external research capability
 try:
-    from external_research import get_enhanced_external_context
+    from .external_research import get_enhanced_external_context
     EXTERNAL_RESEARCH_AVAILABLE = True
 except ImportError:
-    EXTERNAL_RESEARCH_AVAILABLE = False
-    get_enhanced_external_context = None
-    print("[!] External research module not available. Using basic research only.")
+    try:
+        from external_research import get_enhanced_external_context
+        EXTERNAL_RESEARCH_AVAILABLE = True
+    except ImportError:
+        EXTERNAL_RESEARCH_AVAILABLE = False
+        get_enhanced_external_context = None
+        print("[!] External research module not available. Using basic research only.")
 
 class MITREResearcher:
     def __init__(self):

@@ -5,9 +5,18 @@ Handles mixed technique types in the knowledge base.
 
 import json
 import os
+import sys
 from typing import Dict, List
-from universal_techniques import UniversalTechniqueManager, TechniqueType
-from enhanced_research import MITREResearcher
+
+# Add current directory to path for relative imports
+sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+
+try:
+    from .universal_techniques import UniversalTechniqueManager, TechniqueType
+    from .enhanced_research import MITREResearcher
+except ImportError:
+    from universal_techniques import UniversalTechniqueManager, TechniqueType
+    from enhanced_research import MITREResearcher
 
 class UniversalProjectManager:
     def __init__(self, project_root: str = "."):

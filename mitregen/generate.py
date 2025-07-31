@@ -3,8 +3,17 @@ import json
 import requests
 from pathlib import Path
 from datetime import datetime
-from prompts import get_prompt
-from universal_research import get_universal_deep_context
+import sys
+
+# Add current directory to path for relative imports
+sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+
+try:
+    from .prompts import get_prompt
+    from .universal_research import get_universal_deep_context
+except ImportError:
+    from prompts import get_prompt
+    from universal_research import get_universal_deep_context
 
 DEFAULT_MODEL = os.getenv("OLLAMA_MODEL", "llama2-uncensored:7b")
 OLLAMA_URL = os.getenv("OLLAMA_HOST", "http://localhost:11434/api/generate")

@@ -6,7 +6,15 @@ Removes deprecated techniques and validates current ones.
 
 import json
 import os
-from enhanced_research import MITREResearcher
+import sys
+
+# Add current directory to path for relative imports
+sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+
+try:
+    from .enhanced_research import MITREResearcher
+except ImportError:
+    from enhanced_research import MITREResearcher
 
 def cleanup_deprecated_techniques():
     """Clean up deprecated techniques from project status"""

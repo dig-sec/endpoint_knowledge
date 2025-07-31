@@ -34,12 +34,22 @@ mitregen/
 
 ## How to Run Local Automation
 1. Ensure `project_status.json` is up to date in the project root.
-2. Run:
+2. Activate the virtual environment:
    ```bash
-   python3 mitregen/generate.py --platform windows --model llama2-uncensored:7b --verbose
+   source .venv/bin/activate
    ```
-   - Change `--platform` for linux or macos as needed.
-   - The script will log prompts, model responses, and file creation status.
+3. Run automation:
+   ```bash
+   # Generate for specific platform
+   python3 mitregen/cli.py --platform windows --model llama2-uncensored:7b --verbose
+   
+   # Generate for all platforms
+   python3 mitregen/cli.py --all-platforms --verbose
+   
+   # Direct generation (legacy)
+   python3 mitregen/generate.py
+   ```
+   - The script will log enhanced prompts with research context, model responses, and file creation status.
 
 ## How It Works
 - For each technique, the automation checks for missing or outdated files.

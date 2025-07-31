@@ -4,6 +4,7 @@ import requests
 from pathlib import Path
 from datetime import datetime
 from prompts import get_prompt
+from universal_research import get_universal_deep_context
 
 DEFAULT_MODEL = os.getenv("OLLAMA_MODEL", "llama2-uncensored:7b")
 OLLAMA_URL = os.getenv("OLLAMA_HOST", "http://localhost:11434/api/generate")
@@ -57,7 +58,7 @@ def check_files(base_path, technique):
                         outdated.append(fname)
     return missing, outdated
 
-def ollama_generate(prompt, model=DEFAULT_MODEL):
+def ollama_generate(prompt, model=DEFAULT_MODEL, technique_id=None):
     """Generate content with validation and retry logic"""
     data = {"model": model, "prompt": prompt, "stream": False, "options": {"temperature": 0.7}}
     max_retries = 3
@@ -73,13 +74,24 @@ def ollama_generate(prompt, model=DEFAULT_MODEL):
                 print(f"[-] Content too short on attempt {attempt + 1}")
                 continue
                 
-            # Check for generic responses
-            generic_phrases = ["antivirus software", "up-to-date", "USB drives", "firewall"]
-            if any(phrase in content for phrase in generic_phrases):
-                print(f"[-] Generic content detected on attempt {attempt + 1}")
+            # Check for generic responses (technique-specific validation)
+            generic_phrases = ["antivirus software", "up-to-date", "USB drives", "firewall", "general security practices"]
+            generic_count = sum(1 for phrase in generic_phrases if phrase in content.lower())
+            
+            # Enhanced validation for technique-specific content
+            if technique_id:
+                technique_mentioned = technique_id.lower() in content.lower()
+                if not technique_mentioned:
+                    print(f"[-] Content doesn't mention technique {technique_id} on attempt {attempt + 1}")
+                    if attempt < max_retries - 1:
+                        data["prompt"] = prompt + f"\n\nMust specifically address technique {technique_id}. Include the technique ID and name in your response."
+                        continue
+            
+            if generic_count >= 2:
+                print(f"[-] Generic content detected ({generic_count} generic phrases) on attempt {attempt + 1}")
                 if attempt < max_retries - 1:
                     # Modify prompt to be more specific
-                    data["prompt"] = prompt + "\n\nBe specific to this exact technique. Avoid generic security advice."
+                    data["prompt"] = prompt + f"\n\nBe specific to technique {technique_id if technique_id else 'this exact technique'}. Provide concrete, actionable information rather than generic security advice."
                     continue
             
             return content
@@ -107,14 +119,24 @@ def write_file(file_path, content):
         f.write(content)
 
 def main(platform="windows", model=DEFAULT_MODEL, verbose=True):
+    """Main function to generate MITRE technique documentation with enhanced research context."""
     status = load_status()
     base_path = os.path.dirname(os.path.abspath(__file__))
+    
+    print(f"[*] Starting enhanced generation for {platform} techniques using {model}")
+    
     for technique in status["techniques"]:
         if technique["platform"].lower() != platform:
             continue
-        print(f"[*] Processing {technique['id']} ({technique['platform']})")
+        print(f"\n[*] Processing {technique['id']} ({technique['platform']})")
         missing, outdated = check_files(base_path, technique)
         files_to_generate = missing + outdated
+        
+        if not files_to_generate:
+            if verbose:
+                print(f"[+] All files up-to-date for {technique['id']}")
+            continue
+            
         for fname in files_to_generate:
             file_path = os.path.join(base_path, technique["platform"].lower(), "techniques", technique["id"], fname)
             if fname.endswith("/"):
@@ -122,9 +144,31 @@ def main(platform="windows", model=DEFAULT_MODEL, verbose=True):
                 print(f"[+] Created directory {fname} for {technique['id']}")
                 continue
             print(f"[*] Generating {fname} for {technique['id']} at {file_path}")
+            
+            # Get research context for better prompts
+            context, sources = get_universal_deep_context(technique["id"], technique["platform"], fname)
+            
+            # Check if technique is deprecated or invalid
+            if context.startswith("ERROR:"):
+                print(f"[!] {context}")
+                if "DEPRECATED" in context:
+                    # Skip generating files for deprecated techniques
+                    placeholder = f"# {fname} for {technique['id']}\n\n{context}\n\nThis technique is deprecated and should not be used for new documentation."
+                    write_file(file_path, placeholder)
+                    print(f"[!] Skipped deprecated technique {technique['id']}")
+                    continue
+                elif "does not exist" in context:
+                    placeholder = f"# {fname} for {technique['id']}\n\n{context}\n\nPlease verify the technique ID is correct."
+                    write_file(file_path, placeholder)
+                    print(f"[!] Skipped invalid technique {technique['id']}")
+                    continue
+            
             prompt = get_prompt(fname, technique)
-            print(f"[*] Prompt for {fname}:\n{prompt}\n---")
-            content = ollama_generate(prompt, model)
+            # Enhance prompt with research context
+            enhanced_prompt = f"{prompt}\n\nResearch Context: {context}\n\nAuthoritative Sources: {', '.join(sources)}\n\nIMPORTANT: Use the research context to provide specific, accurate, and current information. Avoid generic security advice."
+            
+            print(f"[*] Enhanced prompt for {fname}:\n{enhanced_prompt[:300]}...\n---")
+            content = ollama_generate(enhanced_prompt, model, technique["id"])
             if content:
                 print(f"[*] Model response for {fname} ({len(content)} chars):\n{content[:200]}...\n---")
             else:

@@ -58,6 +58,7 @@ python3 test_structure.py
 ```bash
 # Generate for Windows techniques
 python3 mitregen/cli.py --platform windows --verbose
+```
 
 ## Folder Structure
 
@@ -239,14 +240,6 @@ python3 mitregen/cli.py --platform windows --verbose
 - **Module Docstrings**: API documentation in each Python file
 - **test_structure.py**: Validation and examples
 
----
-
-For questions, issues, or contributions, please refer to the project documentation or create an issue.
-
-# Create custom techniques
-python3 mitregen/universal_techniques.py
-```
-
 ## Architecture Overview
 
 ```
@@ -260,11 +253,9 @@ mitregen/                           # Core automation package
 ├── prompts.py                     # Template system
 └── cli.py                         # Command-line interface
 ```
-    techniques/
-      ...
-```
 
 ## How to Run Local Automation
+
 1. Ensure `project_status.json` is up to date in the project root.
 2. Activate the virtual environment:
    ```bash
@@ -278,6 +269,9 @@ mitregen/                           # Core automation package
    # Generate for all platforms
    python3 mitregen/cli.py --all-platforms --verbose
    
+   # Create custom techniques
+   python3 mitregen/universal_techniques.py
+   
    # Direct generation (legacy)
    python3 mitregen/generate.py
    ```
@@ -288,14 +282,3 @@ mitregen/                           # Core automation package
 - Prompts are generated using templates in `mitregen/prompts.py`.
 - Content is generated locally via Ollama and validated for quality.
 - Files are backed up before overwriting, and logs are printed for each step.
-
-## Why This Matters
-- **Scalable:** Automates hundreds of techniques and documentation types.
-- **Private:** All generation is local; no cloud dependencies.
-- **Customizable:** Agents can easily update prompts, templates, and logic.
-- **Defender-Focused:** Content is tailored for detection, mitigation, and response.
-
-## Next Steps
-- Continue to iterate and improve prompt engineering, validation, and feedback loops.
-- Expand to additional platforms and technique types as needed.
-- Use this README as a reference for project goals and workflow.

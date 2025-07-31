@@ -35,3 +35,4 @@ Thumbs.db
 
 # Python bytecode files
 *.pyc
+mitregen/__pycache__/prompts.cpython-312.pyc

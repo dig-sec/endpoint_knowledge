@@ -1,36 +1,59 @@
-# Endpoint Knowledge Base
+# Endpoint Knowledge Base Automation
 
-## Overview
-This project documents Windows and Linux internals, offensive and defensive techniques, MITRE mappings, and code examples. It is designed for use by red, blue, and purple teams, supporting research, automation, and iterative improvement.
+## Project Purpose
+This project builds a comprehensive, agent-driven knowledge base for endpoint internals and MITRE ATT&CK techniques. It is designed for scalable, local automation using LLMs (Ollama) to generate, validate, and maintain high-quality documentation for defenders and researchers.
 
-## Architecture
+## Key Features
+- **MITRE ATT&CK Sync:** Automated inventory and documentation for all known techniques, mapped to Windows, Linux, and macOS.
+- **Local Generation:** Uses local LLMs (e.g., llama2-uncensored:7b) for content creation, ensuring privacy and control.
+- **Agent-Friendly Structure:** Flat, platform-centric folder layout for easy navigation and editing.
+- **Quality Control:** Detects and overwrites placeholder or low-quality content, with backup and logging.
+- **Extensible Prompts:** Easily update prompt templates in `mitregen/prompts.py` for better results.
+- **Batch Processing:** Supports full inventory generation, platform filtering, and error handling.
 
-- `windows/` and `linux/`: Platform-specific internals and techniques
-  - `internals/techniques/<technique_id>/`: Each technique folder contains:
-    - `description.md`: Technique overview
-    - `code_samples/`: Offensive code examples
-    - `detection.md`: Defensive detection logic
-    - `mitigation.md`: Defensive mitigation strategies
-    - `purple_playbook.md`: Purple team simulation and validation
-    - `references.md`: External resources
-    - `agent_notes.md`: Automation and improvement notes
-- `shared/`: Cross-platform resources, templates, and automation guides
-  - `mitre_matrix.json`: MITRE technique mapping
-  - `agents/`: Agent templates, tasks, and automation guides
-  - `todo.md`: Project tasks and backlog
-  - `quality_checklist.md`: Manual and automated quality checks
-  - `visualization.md`: Project coverage and gaps
+## Folder Structure
+```
+mitregen/
+  windows/
+    techniques/
+      T1059.010/
+        agent_notes.md
+        description.md
+        detection.md
+        mitigation.md
+        purple_playbook.md
+        references.md
+      ...
+  linux/
+    techniques/
+      ...
+  macos/
+    techniques/
+      ...
+```
 
-## How to Use
-- Browse technique folders for comprehensive coverage of attack and defense
-- Use code samples and playbooks for simulation and validation
-- Reference detection and mitigation files for blue team operations
-- Follow agent guides for automation and quality assurance
+## How to Run Local Automation
+1. Ensure `project_status.json` is up to date in the project root.
+2. Run:
+   ```bash
+   python3 mitregen/generate.py --platform windows --model llama2-uncensored:7b --verbose
+   ```
+   - Change `--platform` for linux or macos as needed.
+   - The script will log prompts, model responses, and file creation status.
 
-## Contributing
-See `shared/contributing.md` for guidelines on adding new techniques, code samples, and automation tasks.
+## How It Works
+- For each technique, the automation checks for missing or outdated files.
+- Prompts are generated using templates in `mitregen/prompts.py`.
+- Content is generated locally via Ollama and validated for quality.
+- Files are backed up before overwriting, and logs are printed for each step.
 
-## Goals
-- Support red, blue, and purple team workflows
-- Enable agent-driven research and documentation
-- Maintain high quality and cross-referenced content
+## Why This Matters
+- **Scalable:** Automates hundreds of techniques and documentation types.
+- **Private:** All generation is local; no cloud dependencies.
+- **Customizable:** Agents can easily update prompts, templates, and logic.
+- **Defender-Focused:** Content is tailored for detection, mitigation, and response.
+
+## Next Steps
+- Continue to iterate and improve prompt engineering, validation, and feedback loops.
+- Expand to additional platforms and technique types as needed.
+- Use this README as a reference for project goals and workflow.

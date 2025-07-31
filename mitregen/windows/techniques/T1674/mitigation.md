@@ -1,0 +1,9 @@
+Strategies to mitigate T1674 attack on Windows:
+
+1. Implement a multi-factor authentication (MFA) solution that requires users to provide both something they know (e.g., a password or PIN) and something they have (e.g., a mobile device or biometric identifier). This will make it more difficult for an attacker to gain unauthorized access to a system or account.
+2. Enforce regular software updates on all devices connected to the network, including laptops, desktops, and mobile devices, as well as servers. These updates often include security patches that address known vulnerabilities in operating systems and applications.
+3. Use firewalls and intrusion detection/prevention systems (IDS/IPS) to monitor incoming and outgoing network traffic for anomalies or malicious activity. This can help identify potential attacks before they succeed.
+4. Conduct regular vulnerability assessments and penetration testing on the network to identify and remediate any security weaknesses that may exist.
+5. Educate users on safe computing practices, including proper password management, avoiding suspicious emails or websites, and reporting any suspected malware infections immediately.
+6. Monitor all user activity on the network, including logins, file transfers, and other activities, to detect unusual behavior that may indicate an attacker's presence.
+7. Consider implementing a mobile device management (MDM) solution that allows administrators to remotely wipe or lockdown devices in case of theft or loss, as well as enforce policies such as strict password requirements and MFA enforcement on all devices.

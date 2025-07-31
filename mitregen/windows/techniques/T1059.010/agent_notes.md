@@ -1,0 +1,13 @@
+Windows Registry is a hierarchical database that stores configuration settings and options in text-based key/value pairs, often referred to as "keys" and "values". It provides a centralized location for the operating system and applications to store and retrieve information.
+
+T1059.010 involves modifying the Windows Registry to create a new registry entry or modify an existing one in order to achieve a specific task, such as disabling Windows Update or installing additional software. The technique is particularly effective because it allows attackers to bypass security restrictions and gain unauthorized access to sensitive system configurations.
+
+To implement T1059.010 on Windows, the attacker would need to have a basic understanding of how the operating system stores configuration information in the Registry. This can be achieved through various sources such as online tutorials or technical documentation.
+
+Once the attacker has gained access to the victim's machine, they can proceed with the following steps:
+- Identify the targeted Windows Registry keys that are related to the desired modification or addition of a new key/value pair. This is usually done by exploring the Registry using Registry Explorer tools such as Regedit or FAR Manager.
+- Create a new registry entry, modify an existing one, or delete it altogether based on the attacker's goals and objectives. The attacker can choose to create a new key/value pair that disables Windows Update or install additional software for example.
+- Copy the desired key path and corresponding value(s) into a text file that will be used as a template during the attack process. This is done by exporting the targeted registry keys from Registry Explorer tools.
+- Launch the remote attack tool (e.g., Metasploit or PowerShell Empire) with a command-line interface and provide the copied key path and value(s) as arguments to the exploitation module. The attacker can then execute the attack by executing the code provided by the exploitation module through Registry Explorer tools such as Regedit or FAR Manager.
+
+Note: Attackers may also choose to use PowerShell scripts, command-line interfaces (such as CMD), and batch files to achieve the same goal of modifying Windows Registry settings on a remote machine. These options provide attackers with more flexibility in terms of code execution and can be executed without any user interaction.

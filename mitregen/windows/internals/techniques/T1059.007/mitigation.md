@@ -1,0 +1,6 @@
+Technique T1059.007 on Windows is a PowerShell execution with administrator rights, which requires the user to have administrative privileges in order for it to work properly. To mitigate this attack, you can implement the following strategies:
+
+1. Limit access to administrative privileges by configuring Group Policy Objects (GPOs) or by using Active Directory-based controls. This will make it more difficult for malicious actors to gain unauthorized access to Windows systems.
+2. Enable the PowerShell remote signing block policy, which prevents the execution of unsigned scripts in remote sessions. You can set this policy on individual machines or centrally via GPOs.
+3. Use a network-level firewall to block incoming traffic from unauthenticated users. This will help prevent malicious actors from executing malicious PowerShell code from external sources.
+4. Conduct regular security audits and updates to ensure that all software is up-to-date with the latest patches, which will help mitigate known vulnerabilities in Windows systems.

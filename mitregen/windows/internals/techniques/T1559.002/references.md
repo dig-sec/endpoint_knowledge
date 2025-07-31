@@ -1,0 +1,4 @@
+Sure! Here are some references that can help you with your research on MITRE ATT&CK technique T1559.002 on Windows:
+- "Windows Registry Backup Files" by Microsoft Support (https://support.microsoft.com/en-us/help/318654/how-to-back-up-and-restore-the-windows-registry)
+- "Using Group Policy to Back Up the Windows Registry" by Microsoft Docs (https://docs.microsoft.com/en-us/windows-server/identity/ad-ds/manage/administer-gp-settings#backup-and-restore-the-registry)
+- "Managing Windows registry backups and restores with Group Policy" by TechRepublic (https://www.techrepublic.com/article/managing-windows-registry-backups-and-restores-with-group-policy/)

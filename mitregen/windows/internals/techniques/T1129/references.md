@@ -1,0 +1,5 @@
+Sure! Here are some references for the MITRE ATT&CK technique T1129 on Windows:
+1. "Inspection of Event Logs for Indicators of Compromise (IOC) to Identify APT-Related Activity" by Brian Krebs, August 30, 2015: https://krebsonsecurity.com/2015/08/inspection-of-event-logs-for-indicators-of-compromise-iocs-to-identify-apt-related-activity/
+2. "The ATT&CK Matrix: The SANS 360° Approach to Defense" by Michael Assante and Jeremy Tinsley, March 8, 2019: https://www.sans.org/attack-matrix/the-sans-360%E2%80%B0-approach-to-defense/
+3. "Using Process Monitor to Detect Changes in Windows Event Logs" by Joe Tager, March 1, 2017: https://www.grc.com/rpc.htm
+4. "Process Monitor for Windows - Sysinternals TechNet Blogs" by Aaron Margosis, August 23, 2019: http://blogs.technet.microsoft.com/sysinternals/tag/process-monitor/

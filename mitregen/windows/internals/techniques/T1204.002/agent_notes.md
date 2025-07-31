@@ -1,0 +1,12 @@
+Technique: Credential Dumping
+
+Description: A credential dumping technique refers to the ability of an attacker to extract credentials from a system or network, either by cracking hashed passwords or stealing them directly from the local storage. The process involves capturing user credentials using tools such as Mimikatz or NirSoft's Credentials Editor and then exporting them to a file for later use.
+
+Windows Variant: Credential Dumping on Windows systems can be achieved by leveraging the Windows Credential Manager, which stores all credentials in the LocalMachine hive of the registry. The attacker can modify this hive to steal the credentials stored within it and then export them to a file for later use. Additionally, credential dumping techniques can also be used on remote systems using tools such as Metasploit's Credentials Harvester or Meterpreter's Credentials module.
+
+Agent Research Notes:
+- MITRE ATT&CK technique T1204.002 is specifically related to credential dumping techniques on Windows systems, which are widely used by attackers to gain unauthorized access to privileged accounts and resources. These attacks can result in data breaches, system compromise, and unauthorized access to sensitive information.
+- Credentials harvesting tools such as Mimikatz and NirSoft's Credentials Editor are commonly used by attackers to extract credentials from a system or network, either by cracking hashed passwords or stealing them directly from the local storage. These tools provide attackers with an easy way to gather credential information without requiring direct access to the target system.
+- To prevent credential dumping attacks on Windows systems, organizations can implement multi-factor authentication (MFA), which requires users to present multiple forms of identification before being granted access to a resource. Additionally, endpoint protection solutions such as antivirus software and network firewalls can be deployed to detect and block credential harvesting tools in real-time.
+
+Agent Research Conclusion: Credential dumping is an important attack technique that requires thorough research to prevent against. By implementing MFA, deploying endpoint security solutions, and regularly auditing systems for any unauthorized activity, organizations can significantly reduce their risk of credential theft and compromise.

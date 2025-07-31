@@ -1,0 +1,6 @@
+To detect the MITRE ATT&CK technique T1559.001 (Windows), you can use the following detection rules:
+1. Create a new rule in your firewall or intrusion prevention system (IPS) that looks for any outbound connection attempts from an infected machine to a known malicious domain or IP address associated with this technique.
+2. Monitor network traffic and look for any unusual activity that might indicate the presence of a backdoor or other type of covert communications channel being established by the attacker. This can be achieved through the use of network packet analyzers or other network monitoring tools.
+3. Review event logs on the infected machine to see if there are any processes running that are known to be associated with this technique, such as rundll32.exe or cmd.exe.
+4. Look for indications of command-line arguments being passed to these processes that suggest a connection is being established with an external device or server controlled by the attacker.
+5. Investigate any suspicious behavior on the infected machine, such as unexpected shutdowns, unexpected reboots, or other anomalous activity that might indicate the presence of this technique.

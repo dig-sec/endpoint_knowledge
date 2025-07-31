@@ -1,0 +1,2 @@
+1. Detecting when a process is running as SYSTEM, using the following rule: "Processes running with elevated privileges (elevated_privilege) are identified and their command line arguments analyzed to determine if they match any known malicious binaries or executables." 
+2. Detecting when a file has been encrypted using AES algorithm, using the following rule: "Files that have an encrypted content and/or are located in directories which are known to contain encrypted files are identified."

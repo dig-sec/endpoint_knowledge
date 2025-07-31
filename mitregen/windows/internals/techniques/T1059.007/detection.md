@@ -1,0 +1,1 @@
+Detective rule: "If a user launches an application and it starts to run, the system executes an untrusted file that may lead to malicious behavior."

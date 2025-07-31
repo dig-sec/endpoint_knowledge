@@ -1,0 +1,4 @@
+1. Detect the presence of scheduled tasks that execute PowerShell commands to download and execute files from external sources, such as HTTP(S) or FTP servers. These could be indicators of malware delivery and execution. 
+2. Look for the existence of scheduled task "WINWORD" with a command-line argument consisting of a path to a file that contains PowerShell commands or other malicious content. This is an indication of the use of spear-phishing techniques. 
+3. Search for Windows Services that have been configured to automatically start on boot, including services such as LSASS and DCOM.exe, which are commonly used by malware to execute code and perform tasks in the background. 
+4. Monitor the execution of system processes that have abnormal or uncommon behavior, such as processes with high CPU usage, network activity, or file accesses outside of their expected function. These could be indicators of malicious activity.

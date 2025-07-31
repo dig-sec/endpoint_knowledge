@@ -1,0 +1,4 @@
+- Technique Description: T1106 is a term used to describe the process of creating a new user account with elevated privileges in the system, which can be accomplished using various methods such as manually creating an administrator account or using third-party tools. 
+- Mitre ATT&CK Category: Privilege Escalation and Credential Access
+- Impacts: This technique can grant access to privileged accounts and sensitive data, allowing attackers to gain further access to the system or perform other malicious activities.
+- Sources: Various third-party tools such as Cain & Abel, Malwarebytes, and Wireshark can be used to create new administrator accounts on Windows systems. Additionally, manual creation of an administrative account is possible using various methods like creating a hidden user or modifying the system registry.

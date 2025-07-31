@@ -1,0 +1,7 @@
+The MITRE ATT&CK technique T1204.002 (Windows Defender Application Control - Apply Group Policy) is a technique used to restrict the programs that are allowed to run on a Windows system by applying a group policy. This technique applies a rule set to prevent unauthorized applications from running on a system, thus providing an added layer of security against malware and other threats.
+
+To implement this technique, administrators create a Group Policy Object (GPO) that contains the rules for which programs are allowed to run and which are not. The GPO is then applied to the Windows systems where it will be used. 
+
+This technique provides several benefits, including improved security posture against malware and other threats by preventing unauthorized applications from running on a system, reduced risk of data loss or compromise due to restricted access to sensitive files, and improved compliance with organizational policies related to application use.
+
+Overall, the MITRE ATT&CK technique T1204.002 (Windows Defender Application Control - Apply Group Policy) is a powerful tool that can help organizations protect their systems from malicious actors by restricting access to unauthorized applications.

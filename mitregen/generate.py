@@ -12,10 +12,14 @@ try:
     from .prompts import get_prompt
     from .universal_research import get_universal_deep_context
     from .research_summary import ResearchSummaryManager
+    from .agent_debate import enhanced_generation_with_debate, AgentDebateSystem
+    from .code_examples import CodeExamplesGenerator, CodeType
 except ImportError:
     from prompts import get_prompt
     from universal_research import get_universal_deep_context
     from research_summary import ResearchSummaryManager
+    from agent_debate import enhanced_generation_with_debate, AgentDebateSystem
+    from code_examples import CodeExamplesGenerator, CodeType
 
 DEFAULT_MODEL = os.getenv("OLLAMA_MODEL", "llama2-uncensored:7b")
 OLLAMA_URL = os.getenv("OLLAMA_HOST", "http://localhost:11434/api/generate")
@@ -99,53 +103,78 @@ def check_files(base_path, technique):
                         outdated.append(fname)
     return missing, outdated
 
-def ollama_generate(prompt, model=DEFAULT_MODEL, technique_id=None, existing_content="", max_iterations=3):
-    """Generate content with deep research, multiple iterations, and quality validation"""
+def ollama_generate(prompt, model=DEFAULT_MODEL, technique_id=None, existing_content="", max_iterations=3, use_debate=True, research_context=""):
+    """Generate content with agent debate system, deep research, and quality validation"""
     
-    # Enhanced generation with multiple iterations for quality
-    best_content = ""
-    best_score = 0
+    if use_debate:
+        print(f"[*] Using enhanced generation with agent debate system")
+        
+        # Use agent debate system for superior quality
+        context = f"Technique: {technique_id}" if technique_id else "Content Generation"
+        
+        final_content, debate_summary = enhanced_generation_with_debate(
+            prompt=prompt,
+            context=context,
+            model=model,
+            max_debate_rounds=2,  # 2 rounds for good quality vs speed balance
+            consensus_threshold=7.5,
+            research_context=research_context
+        )
+        
+        print(f"[+] Agent debate generation complete")
+        print(f"[+] Final consensus score: {debate_summary.get('final_consensus', 0):.2f}")
+        print(f"[+] Debate rounds: {debate_summary.get('total_rounds', 0)}")
+        
+        return final_content
     
-    for iteration in range(max_iterations):
-        print(f"[*] Generation iteration {iteration + 1}/{max_iterations}")
+    else:
+        # Fallback to original iterative generation
+        print(f"[*] Using standard iterative generation")
         
-        # Adjust temperature and approach per iteration
-        temperature = 0.7 if iteration == 0 else 0.5 + (iteration * 0.1)
+        # Enhanced generation with multiple iterations for quality
+        best_content = ""
+        best_score = 0
         
-        # Build iterative prompt with existing content awareness
-        iterative_prompt = prompt
-        if existing_content.strip():
-            iterative_prompt += f"\n\nEXISTING CONTENT TO ENHANCE/EXPAND:\n{existing_content}\n\nIMPROVE upon the existing content above. Add new insights, examples, and depth while preserving valuable information."
-        
-        if iteration > 0 and best_content:
-            iterative_prompt += f"\n\nPREVIOUS ATTEMPT (improve upon this):\n{best_content[:500]}...\n\nGenerate BETTER content with more depth, specific examples, and technical accuracy."
-        
-        data = {"model": model, "prompt": iterative_prompt, "stream": False, "options": {"temperature": temperature}}
-        
-        try:
-            response = requests.post(OLLAMA_URL, json=data, timeout=180)
-            response.raise_for_status()
-            content = response.json().get("response", "")
+        for iteration in range(max_iterations):
+            print(f"[*] Generation iteration {iteration + 1}/{max_iterations}")
             
-            # Comprehensive content scoring
-            score = score_content_quality(content, technique_id, existing_content)
-            print(f"[*] Iteration {iteration + 1} score: {score:.2f}")
+            # Adjust temperature and approach per iteration
+            temperature = 0.7 if iteration == 0 else 0.5 + (iteration * 0.1)
             
-            if score > best_score:
-                best_content = content
-                best_score = score
-                print(f"[+] New best content (score: {score:.2f})")
+            # Build iterative prompt with existing content awareness
+            iterative_prompt = prompt
+            if existing_content.strip():
+                iterative_prompt += f"\n\nEXISTING CONTENT TO ENHANCE/EXPAND:\n{existing_content}\n\nIMPROVE upon the existing content above. Add new insights, examples, and depth while preserving valuable information."
             
-            # Early exit if excellent quality achieved
-            if score >= 8.5:
-                print(f"[+] Excellent quality achieved, stopping iterations")
-                break
+            if iteration > 0 and best_content:
+                iterative_prompt += f"\n\nPREVIOUS ATTEMPT (improve upon this):\n{best_content[:500]}...\n\nGenerate BETTER content with more depth, specific examples, and technical accuracy."
+            
+            data = {"model": model, "prompt": iterative_prompt, "stream": False, "options": {"temperature": temperature}}
+            
+            try:
+                response = requests.post(OLLAMA_URL, json=data, timeout=180)
+                response.raise_for_status()
+                content = response.json().get("response", "")
                 
-        except Exception as e:
-            print(f"[-] Error in iteration {iteration + 1}: {e}")
-            continue
-    
-    return best_content if best_content else None
+                # Comprehensive content scoring
+                score = score_content_quality(content, technique_id, existing_content)
+                print(f"[*] Iteration {iteration + 1} score: {score:.2f}")
+                
+                if score > best_score:
+                    best_content = content
+                    best_score = score
+                    print(f"[+] New best content (score: {score:.2f})")
+                
+                # Early exit if excellent quality achieved
+                if score >= 8.5:
+                    print(f"[+] Excellent quality achieved, stopping iterations")
+                    break
+                    
+            except Exception as e:
+                print(f"[-] Error in iteration {iteration + 1}: {e}")
+                continue
+        
+        return best_content if best_content else None
 
 def score_content_quality(content, technique_id=None, existing_content=""):
     """Score content quality on multiple dimensions"""
@@ -369,8 +398,8 @@ IMPORTANT:
 
             print(f"[*] Enhanced prompt for {fname}:\n{enhanced_prompt[:400]}...\n---")
             
-            # Generate with multiple iterations and existing content awareness
-            content = ollama_generate(enhanced_prompt, model, technique["id"], existing_content, max_iterations=3)
+            # Generate with agent debate system for higher quality
+            content = ollama_generate(enhanced_prompt, model, technique["id"], existing_content, max_iterations=3, use_debate=True, research_context=enhanced_context)
             
             if content:
                 print(f"[*] Generated content for {fname} ({len(content)} chars):\n{content[:300]}...\n---")
@@ -382,6 +411,12 @@ IMPORTANT:
                 if quality_score >= 6.0:  # Acceptable quality threshold
                     existing_backup = write_file(file_path, content, preserve_existing=True)
                     print(f"[+] Generated {fname} for {technique['id']} (score: {quality_score:.2f}, {len(content)} chars)")
+                    
+                    # Generate comprehensive code examples for code_samples directory
+                    if fname == "code_samples/":
+                        print(f"[*] Generating comprehensive code examples for {technique['id']}")
+                        generate_comprehensive_code_examples(technique, method_platform, enhanced_context, file_path)
+                        
                 else:
                     print(f"[-] Content quality below threshold ({quality_score:.2f}), generating fallback")
                     fallback_content = f"# {fname} for {technique['id']}\n\n## Auto-Generated Content (Quality Score: {quality_score:.2f})\n\n{content}\n\n---\n*Note: This content may need manual review and enhancement*"
@@ -390,6 +425,136 @@ IMPORTANT:
                 print(f"[-] Failed to generate valid content for {fname} in {technique['id']}")
                 placeholder = f"# {fname} for {technique['id']}\n\n[Generation failed after multiple iterations - requires manual review]\n\nResearch Context Available:\n{enhanced_context[:500]}..."
                 write_file(file_path, placeholder)
+
+def generate_comprehensive_code_examples(technique, platform, context, base_path):
+    """Generate comprehensive code examples for a technique using the enhanced code generator"""
+    
+    try:
+        print(f"[*] Generating comprehensive code examples for {technique['id']}")
+        
+        # Initialize code examples generator
+        code_generator = CodeExamplesGenerator()
+        
+        # Determine appropriate code types based on file structure
+        code_types = [CodeType.DETECTION, CodeType.MITIGATION, CodeType.SIMULATION]
+        
+        # Add specialized code types for certain technique types
+        technique_id = technique["id"]
+        if technique_id.startswith('CD-'):  # Custom Defensive
+            code_types.extend([CodeType.CONFIGURATION, CodeType.AUTOMATION])
+        elif technique_id.startswith('ET-'):  # Emerging Threat
+            code_types.extend([CodeType.ANALYSIS, CodeType.REMEDIATION])
+        elif technique_id.startswith('BTM-'):  # Blue Team Methods
+            code_types.extend([CodeType.AUTOMATION, CodeType.ANALYSIS])
+        
+        # Generate comprehensive examples
+        examples_set = code_generator.generate_comprehensive_examples(
+            technique_id=technique["id"],
+            technique_name=technique.get("name", technique["id"]),
+            platform=platform,
+            context=context,
+            code_types=code_types,
+            research_context=context
+        )
+        
+        # Save examples to the code_samples directory
+        if examples_set.examples:
+            # Create structured directory for code examples
+            code_samples_dir = base_path.rstrip('/') if base_path.endswith('/') else base_path
+            
+            # Generate README for code samples
+            readme_content = f"""# Code Examples for {technique['id']}
+
+## Technique: {technique.get('name', technique['id'])}
+## Platform: {platform}
+
+This directory contains comprehensive code examples for implementing, detecting, and mitigating this security technique.
+
+## Generated Examples
+
+Total Examples: {len(examples_set.examples)}
+Languages: {', '.join(examples_set.metadata.get('languages_covered', []))}
+Code Types: {', '.join(examples_set.metadata.get('code_types_covered', []))}
+
+### Example Files
+
+"""
+            
+            # Save individual code examples
+            for i, example in enumerate(examples_set.examples):
+                # Create filename
+                filename = f"{example.code_type.value}_{example.language.value}_{i+1:02d}.{code_generator._get_file_extension(example.language)}"
+                filepath = os.path.join(code_samples_dir, filename)
+                
+                # Create content
+                example_content = f"""# {example.title}
+
+## Description
+{example.description}
+
+## Platform
+{example.platform}
+
+## Prerequisites
+{chr(10).join(f"- {p}" for p in example.prerequisites)}
+
+## Usage Notes
+{chr(10).join(f"- {n}" for n in example.usage_notes)}
+
+## Security Notes
+{chr(10).join(f"- {s}" for s in example.security_notes)}
+
+## Code
+
+```{example.language.value}
+{example.code}
+```
+
+---
+Generated: {datetime.now().strftime('%Y-%m-%d %H:%M:%S')}
+Quality: Enhanced with agent debate system
+"""
+                
+                # Write example file
+                with open(filepath, 'w', encoding='utf-8') as f:
+                    f.write(example_content)
+                
+                # Add to README
+                readme_content += f"- [`{filename}`](./{filename}) - {example.title}\n"
+                
+                print(f"[+] Generated code example: {filename}")
+            
+            # Write README file
+            readme_path = os.path.join(code_samples_dir, "README.md")
+            with open(readme_path, 'w', encoding='utf-8') as f:
+                f.write(readme_content)
+            
+            print(f"[+] Generated {len(examples_set.examples)} code examples for {technique['id']}")
+            print(f"[+] Code examples saved to: {code_samples_dir}")
+            
+        else:
+            print(f"[-] No code examples generated for {technique['id']}")
+            
+    except Exception as e:
+        print(f"[-] Error generating code examples for {technique['id']}: {e}")
+        # Create fallback code samples directory with error message
+        try:
+            error_file = os.path.join(base_path.rstrip('/'), "generation_error.md")
+            with open(error_file, 'w', encoding='utf-8') as f:
+                f.write(f"""# Code Examples Generation Error
+
+An error occurred while generating code examples for {technique['id']}:
+
+```
+{str(e)}
+```
+
+Please review the error and regenerate manually if needed.
+
+Generated: {datetime.now().strftime('%Y-%m-%d %H:%M:%S')}
+""")
+        except:
+            pass
 
 if __name__ == "__main__":
     main()

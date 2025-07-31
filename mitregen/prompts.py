@@ -54,13 +54,76 @@ falsepositives:
 level: medium
 ```
 
+## Code Examples
+
+### PowerShell Detection Script
+```powershell
+# PowerShell script to detect this technique
+# Add specific PowerShell detection logic here
+Get-WinEvent -FilterHashtable @{{LogName='Security'; ID=4688}} | 
+    Where-Object {{$_.Message -match "specific_pattern"}} | 
+    Select-Object TimeCreated, Id, LevelDisplayName, Message
+```
+
+### Python Detection Script
+```python
+#!/usr/bin/env python3
+# Python script for automated detection
+import subprocess
+import json
+import datetime
+
+def detect_technique():
+    \"\"\"Detect technique {id} activity\"\"\"
+    # Add specific detection logic here
+    results = []
+    
+    # Example detection logic
+    try:
+        # Platform-specific detection commands
+        result = subprocess.run(['command', 'here'], capture_output=True, text=True)
+        if result.returncode == 0:
+            results.append({{
+                'timestamp': datetime.datetime.now().isoformat(),
+                'technique': '{id}',
+                'detected': True,
+                'evidence': result.stdout
+            }})
+    except Exception as e:
+        print(f"Detection error: {{e}}")
+    
+    return results
+
+if __name__ == "__main__":
+    detections = detect_technique()
+    print(json.dumps(detections, indent=2))
+```
+
 ## Platform-Specific Queries
 [Include KQL, Splunk SPL, or other relevant query languages for {platform}]
+
+### KQL Query (Azure Sentinel/Defender)
+```kql
+// KQL query for detecting this technique
+SecurityEvent
+| where EventID == 4688
+| where ProcessCommandLine contains "specific_indicator"
+| project TimeGenerated, Computer, Account, ProcessCommandLine
+| order by TimeGenerated desc
+```
+
+### Splunk SPL Query
+```splunk
+index=main sourcetype=WinEventLog:Security EventCode=4688
+| search CommandLine="*specific_pattern*"
+| table _time, Computer, User, CommandLine
+| sort -_time
+```
 
 ## Detection Notes
 [Additional guidance specific to this technique on {platform}]
 
-Focus on actionable detection logic, not generic advice.""",
+Focus on actionable detection logic with working code examples, not generic advice.""",
 
     "mitigation.md": """Write comprehensive, technique-specific mitigation strategies for MITRE ATT&CK technique {id} on {platform}.
 
@@ -71,6 +134,104 @@ Structure your response as:
 ## Technical Controls
 [Specific technical controls to prevent this technique]
 
+### Configuration Examples
+
+#### Group Policy Configuration (Windows)
+```powershell
+# PowerShell script to apply security configurations
+# Specific configurations for mitigating {id}
+
+# Example: Configure audit policies
+auditpol /set /subcategory:"Process Creation" /success:enable /failure:enable
+
+# Example: Registry modifications for hardening
+Set-ItemProperty -Path "HKLM:\\SYSTEM\\CurrentControlSet\\Control\\Lsa" -Name "RestrictAnonymous" -Value 1
+```
+
+#### Linux Configuration
+```bash
+#!/bin/bash
+# Bash script for Linux hardening against {id}
+
+# Example: Configure system settings
+echo "audit_log_policy = LOG_AUDIT_ACCT" >> /etc/security/pam_env.conf
+
+# Example: Set file permissions
+chmod 644 /etc/passwd
+chmod 600 /etc/shadow
+```
+
+#### Network Controls
+```yaml
+# Example firewall rules (iptables format)
+# Block specific traffic patterns related to {id}
+rules:
+  - action: drop
+    protocol: tcp
+    destination_port: "specific_port"
+    comment: "Block {id} related traffic"
+```
+
+## Automated Mitigation Scripts
+
+### PowerShell Mitigation Script
+```powershell
+function Invoke-MitigationScript {{
+    <#
+    .SYNOPSIS
+        Implements mitigation measures for technique {id}
+    .DESCRIPTION
+        Automated script to configure system defenses
+    #>
+    
+    param(
+        [switch]$CheckOnly,
+        [switch]$Apply
+    )
+    
+    # Mitigation logic here
+    Write-Host "Applying mitigations for {id}..."
+    
+    # Example mitigation steps
+    if ($Apply) {{
+        # Apply actual mitigation measures
+        Write-Host "Mitigation applied successfully"
+    }}
+}}
+```
+
+### Python Mitigation Script
+```python
+#!/usr/bin/env python3
+import os
+import subprocess
+import logging
+
+def apply_mitigation():
+    \"\"\"Apply mitigation measures for technique {id}\"\"\"
+    logging.basicConfig(level=logging.INFO)
+    logger = logging.getLogger(__name__)
+    
+    try:
+        # Platform-specific mitigation logic
+        logger.info("Applying mitigation for {id}")
+        
+        # Example mitigation commands
+        result = subprocess.run(['systemctl', 'disable', 'vulnerable_service'], 
+                              capture_output=True, text=True)
+        
+        if result.returncode == 0:
+            logger.info("Mitigation applied successfully")
+        else:
+            logger.error(f"Mitigation failed: {{result.stderr}}")
+            
+    except Exception as e:
+        logger.error(f"Error applying mitigation: {{e}}")
+
+if __name__ == "__main__":
+    apply_mitigation()
+```
+
 ## User Awareness
 [User training and awareness specific to this technique]
 
@@ -80,7 +241,7 @@ Structure your response as:
 ## References
 [Authoritative links to Microsoft, MITRE, and other official guidance]
 
-Focus on technique-specific, actionable mitigations, not generic security advice. Avoid mentioning USB drives, antivirus, or generic security practices unless directly relevant to this specific technique.""",
+Focus on technique-specific, actionable mitigations with working code examples, not generic security advice. Avoid mentioning USB drives, antivirus, or generic security practices unless directly relevant to this specific technique.""",
 
     "purple_playbook.md": """Create a Purple Team playbook for MITRE ATT&CK technique {id} on {platform}.
 

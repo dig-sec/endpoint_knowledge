@@ -162,6 +162,61 @@ class AgentDebateSystem:
             }
         }
     
+        
+    def _get_role_specific_analysis_requirements(self, agent_role: AgentRole) -> str:
+        """Get specific analysis requirements for each agent role"""
+        requirements = {
+            AgentRole.TECHNICAL_EXPERT: """
+- System architecture and implementation feasibility
+- Performance implications and optimization opportunities  
+- Technical accuracy of procedures and configurations
+- Platform-specific implementation details and variations
+- Integration with existing system components
+- Scalability and maintenance considerations""",
+            
+            AgentRole.SECURITY_ANALYST: """
+- Threat landscape alignment and attack vector coverage
+- Risk assessment and impact analysis
+- Defensive strategy effectiveness and gaps
+- Real-world attack scenario applicability
+- Security control recommendations and priorities
+- Threat intelligence integration opportunities""",
+            
+            AgentRole.DETECTION_ENGINEER: """
+- Detection rule effectiveness and false positive rates
+- Observable behaviors and monitoring strategies
+- Log source requirements and data collection
+- Alert tuning and threshold optimization
+- Detection coverage gaps and blind spots
+- Incident response workflow integration""",
+            
+            AgentRole.CODE_REVIEWER: """
+- Code syntax accuracy and best practices compliance
+- Error handling and edge case coverage
+- Security implications of code implementations
+- Code maintainability and documentation quality
+- Performance optimization opportunities
+- Platform compatibility and dependency management""",
+            
+            AgentRole.CONTENT_CRITIC: """
+- Content structure and logical flow
+- Clarity and readability for target audience
+- Completeness of coverage and information gaps
+- Documentation standards compliance
+- Actionability and practical implementation guidance
+- Consistency with established knowledge base patterns""",
+            
+            AgentRole.INTEGRATION_SPECIALIST: """
+- Enterprise environment compatibility
+- Deployment complexity and operational overhead
+- Tool integration and workflow automation
+- Change management and rollback procedures
+- Training and skill requirement assessment
+- Cost-benefit analysis and resource allocation"""
+        }
+        
+        return requirements.get(agent_role, "- Provide comprehensive analysis from your expertise perspective")
+    
     def _generate_agent_response(self, agent_role: AgentRole, content: str, 
                                 context: str, debate_history: str = "", 
                                 research_context: str = "") -> AgentResponse:
@@ -170,18 +225,26 @@ class AgentDebateSystem:
         agent_info = self.agent_personalities[agent_role]
         
         # Create agent-specific prompt with research context
+        # Create enhanced agent-specific prompt with research context
         agent_prompt = f"""
-You are {agent_info['name']}, a specialized AI agent with expertise in: {agent_info['expertise']}
+You are {agent_info['name']}, a highly specialized AI agent with deep expertise in: {agent_info['expertise']}
 
 Your personality: {agent_info['personality']}
 Your focus areas: {', '.join(agent_info['focus_areas'])}
 
-TASK: {agent_info['prompt_style']} for the following content.
+CRITICAL QUALITY STANDARDS:
+- Target quality: 8.5+ out of 10 (current content appears to be 6.0-7.0)
+- Provide specific, actionable, detailed recommendations
+- Include concrete code examples and technical specifics
+- NO generic responses like "Thank you for your suggestions"
+- Each suggestion must be implementation-ready
+
+TASK: {agent_info['prompt_style']} for the following content with EXCEPTIONAL depth and specificity.
 
 CONTEXT:
 {context}
 
-RESEARCH CONTEXT (Use this authoritative information in your analysis):
+RESEARCH CONTEXT (Authoritative information - MUST be integrated into your analysis):
 {research_context}
 
 CONTENT TO REVIEW:
@@ -189,23 +252,33 @@ CONTENT TO REVIEW:
 
 {debate_history}
 
+ENHANCED ANALYSIS REQUIREMENTS:
+As {agent_info['name']}, provide an expert-level analysis addressing these specific areas:
+
+{self._get_role_specific_analysis_requirements(agent_role)}
+
 Provide your analysis in this JSON format:
 {{
     "agent_role": "{agent_role.value}",
-    "confidence": [0-10 rating of content quality],
-    "strengths": ["list of content strengths"],
-    "weaknesses": ["list of content weaknesses"], 
-    "suggestions": ["specific improvement suggestions"],
-    "criticisms": ["critical issues that must be addressed"],
-    "improvements": ["concrete improvements to implement"],
-    "enhanced_content": "Your improved version of the content (if applicable)",
-    "code_examples": ["additional code examples if relevant to your role"],
-    "rationale": "Explanation of your assessment and suggestions"
+    "confidence": [0-10 rating - be harsh, demand excellence],
+    "strengths": ["specific technical strengths with evidence"],
+    "weaknesses": ["specific technical weaknesses with examples"], 
+    "suggestions": ["detailed, implementation-ready suggestions"],
+    "criticisms": ["critical technical issues requiring immediate attention"],
+    "improvements": ["step-by-step concrete improvements with code/commands"],
+    "enhanced_content": "Your significantly improved version with technical depth",
+    "code_examples": ["working code examples relevant to your expertise"],
+    "technical_details": ["platform-specific implementation details"],
+    "security_considerations": ["security implications and mitigations"],
+    "rationale": "Detailed technical explanation of your assessment"
 }}
 
-Focus specifically on your expertise area while being constructive and detailed.
-Use the research context to provide accurate, specific recommendations.
-"""
+REQUIREMENTS:
+- Enhanced content must be 2x more detailed than original
+- Include working code examples where applicable
+- Reference research context specifically
+- Be critical - scores below 8.0 indicate significant issues
+- Focus on your expertise area but ensure overall quality"""
 
         try:
             data = {
@@ -404,25 +477,48 @@ Focus on technical depth, practical examples, and actionable content.
                           max_rounds: int = 3, 
                           consensus_threshold: float = 8.0,
                           research_context: str = "") -> str:
-        """Conduct multiple rounds of debate until consensus or max rounds reached"""
+        """
+        Conduct multiple rounds of debate until consensus or max rounds reached
+        
+        Enhanced with:
+        - Higher quality threshold (8.0 instead of 7.5)
+        - Minimum 2 rounds for thorough review
+        - Better progression tracking
+        - Quality improvement monitoring
+        """
         
         print(f"[*] Starting multi-round debate (max {max_rounds} rounds, threshold {consensus_threshold})")
         
         current_content = content
+        min_rounds = 2  # Force minimum 2 rounds for quality
         
         for round_num in range(1, max_rounds + 1):
             debate_round = self.conduct_debate_round(
                 current_content, context, round_number=round_num, research_context=research_context
             )
             
+            # Track quality progression
+            if round_num > 1 and self.debate_history:
+                prev_score = self.debate_history[-1].consensus_score
+                improvement = debate_round.consensus_score - prev_score
+                print(f"[*] Quality improvement: {improvement:+.2f}")
+            
             current_content = debate_round.final_content
             
             print(f"[*] Round {round_num} consensus: {debate_round.consensus_score:.2f}")
             
-            # Check if consensus threshold reached
-            if debate_round.consensus_score >= consensus_threshold:
-                print(f"[+] Consensus threshold reached after {round_num} rounds")
-                break
+            # Enhanced termination logic - require minimum rounds
+            if round_num >= min_rounds:
+                if debate_round.consensus_score >= consensus_threshold:
+                    print(f"[+] Quality threshold reached: {debate_round.consensus_score:.2f} >= {consensus_threshold}")
+                    break
+                elif round_num >= max_rounds:
+                    print(f"[!] Max rounds reached with score: {debate_round.consensus_score:.2f}")
+                    break
+                else:
+                    print(f"[*] Continuing debate (score: {debate_round.consensus_score:.2f} < {consensus_threshold})")
+            else:
+                print(f"[*] Minimum rounds not reached ({round_num}/{min_rounds})")
             
             # For subsequent rounds, focus on agents that had the most criticisms
             if round_num < max_rounds:
@@ -431,12 +527,17 @@ Focus on technical depth, practical examples, and actionable content.
                     if len(r.criticisms) > 0 or r.confidence < 7.0
                 ]
                 
-                if critical_agents:
+                if critical_agents and round_num >= min_rounds:
                     print(f"[*] Next round will focus on: {[a.value for a in critical_agents]}")
                     # Continue with critical agents for next round
-                else:
-                    print(f"[+] No major criticisms, ending debate early")
+                elif round_num >= min_rounds and not critical_agents:
+                    print(f"[+] No major criticisms after minimum rounds, ending debate")
                     break
+        
+        # Validate final quality
+        final_score = self.debate_history[-1].consensus_score if self.debate_history else 0
+        if final_score < 7.0:
+            print(f"[!] WARNING: Final quality score below acceptable threshold: {final_score:.2f}")
         
         print(f"[+] Multi-round debate complete. Final content length: {len(current_content)} chars")
         return current_content

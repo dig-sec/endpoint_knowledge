@@ -48,27 +48,79 @@ def init_security_methods():
     print("[*] Focus is on practical security methods, not just attack techniques")
 
 def generate_method_content(method_type=None, platform=None, method_id=None, model="llama2-uncensored:7b", verbose=False):
-    """Generate content for security methods"""
+    """Generate content for security methods with enhanced agent debate"""
     
     if method_id:
         print(f"[*] Generating content for specific method: {method_id}")
-        # For now, use the existing generate system
-        # TODO: Implement method-specific generation
-        generate_main(platform=platform or "windows", model=model, verbose=verbose)
+        # Enhanced method-specific generation with research context
+        return _generate_for_specific_method(method_id, platform or "windows", model, verbose)
     elif method_type:
         print(f"[*] Generating content for method type: {method_type}")
-        # TODO: Filter by method type
-        generate_main(platform=platform or "windows", model=model, verbose=verbose)
+        # Enhanced filtering by method type with quality improvements
+        return _generate_for_method_type(method_type, platform or "windows", model, verbose)
     elif platform:
         print(f"[*] Generating content for platform: {platform}")
-        generate_main(platform=platform, model=model, verbose=verbose)
+        # Use enhanced generation with agent debate
+        from enhanced_cli import run_enhanced_generation
+        return run_enhanced_generation(platform=platform, use_debate=True, include_code_examples=True, verbose=verbose)
     else:
         print("[*] Generating content for all methods...")
-        for platform in ["windows", "linux", "macos"]:
+        for platform_name in ["windows", "linux", "macos"]:
             print(f"\n{'='*50}")
-            print(f"Processing {platform.upper()} methods")
+            print(f"Processing {platform_name.upper()} methods")
             print(f"{'='*50}")
-            generate_main(platform=platform, model=model, verbose=verbose)
+            from enhanced_cli import run_enhanced_generation
+            run_enhanced_generation(platform=platform_name, use_debate=True, include_code_examples=True, verbose=verbose)
+
+def _generate_for_specific_method(method_id: str, platform: str, model: str, verbose: bool):
+    """Enhanced generation for specific method with research context"""
+    from enhanced_cli import run_enhanced_generation
+    from universal_project_manager import UniversalProjectManager
+    
+    manager = UniversalProjectManager()
+    method_info = manager.get_technique_by_id(method_id)
+    
+    if not method_info:
+        print(f"[!] Method {method_id} not found")
+        return
+    
+    print(f"[+] Found method: {method_info.get('name', method_id)}")
+    print(f"[+] Type: {method_info.get('type', 'unknown')}")
+    print(f"[+] Platform: {method_info.get('primary_platform', platform)}")
+    
+    # Use enhanced generation with method-specific context
+    target_platform = method_info.get('primary_platform', platform)
+    run_enhanced_generation(
+        platform=target_platform, 
+        use_debate=True, 
+        include_code_examples=True, 
+        verbose=verbose
+    )
+
+def _generate_for_method_type(method_type: str, platform: str, model: str, verbose: bool):
+    """Enhanced generation filtered by method type"""
+    from enhanced_cli import run_enhanced_generation
+    from universal_project_manager import UniversalProjectManager
+    
+    manager = UniversalProjectManager()
+    filtered_methods = manager.get_techniques_by_type(method_type)
+    
+    if not filtered_methods:
+        print(f"[!] No methods found for type: {method_type}")
+        all_methods = manager.get_all_techniques()
+        available_types = set(m.get("type", "unknown") for m in all_methods if m.get("type"))
+        print(f"[*] Available types: {', '.join(sorted(available_types))}")
+        return
+    
+    print(f"[+] Found {len(filtered_methods)} methods of type '{method_type}'")
+    
+    for method in filtered_methods:
+        method_id = method.get("id")
+        if method_id:
+            method_platform = method.get("primary_platform", platform)
+            
+            print(f"\n[*] Processing {method_id} ({method.get('name', 'Unknown')})")
+            _generate_for_specific_method(method_id, method_platform, model, verbose)
 
 def show_method_coverage():
     """Show coverage analysis focused on security methods"""
